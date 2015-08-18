@@ -1,0 +1,531 @@
+From g.perez at indisys.es  Fri Sep  3 14:09:16 2010
+From: g.perez at indisys.es (=?iso-8859-1?Q?Guillermo_P=E9rez?=)
+Date: Fri, 3 Sep 2010 14:09:16 +0200
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+Message-ID: <4FDB591A08444564970C5D498D0A5217@Latitude>
+
+Hello,
+
+We are working with Gnome Voice Control, trying to make it work in Spanish. We are now building the Spanish acoustic model, but in the mean time we are also making general changes to the system, including:
+
+- Refactoring of "voice_control" to make the main process independent of the ASR and language chosen
+- Refactoring of "voice_control" and "spi_listener" to make the main process independent of gstream
+- Implementation of a general ASR interface (independent of the particular engine)
+- Integration of Julius as an alternative to Sphinx
+- Expanding the set of commands
+- Some minor changes in the Spanish translation of the commands
+
+We would like to make our changes available as part of the Gnome Voice Control project. How should we proceed?
+
+Kind regards,
+Guillermo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100903/abd5f6f6/attachment.html>
+
+From nshmyrev at yandex.ru  Fri Sep  3 15:13:49 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Fri, 3 Sep 2010 17:13:49 +0400
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <4FDB591A08444564970C5D498D0A5217@Latitude>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+Message-ID: <AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+
+2010/9/3, Guillermo P?rez <g.perez at indisys.es>:
+> Hello,
+
+Hi!
+
+> We are working with Gnome Voice Control, trying to make it work in Spanish.
+
+You can just download Spanish model from http://cmusphinx.sourceforge.net
+
+> We are now building the Spanish acoustic model, but in the mean time we are
+> also making general changes to the system, including:
+>
+> - Refactoring of "voice_control" to make the main process independent of the
+> ASR and language chosen
+
+Ok
+
+> - Refactoring of "voice_control" and "spi_listener" to make the main process
+> independent of gstream
+
+Ok
+
+> - Implementation of a general ASR interface (independent of the particular
+> engine)
+
+I will not be happy about that.
+
+> - Integration of Julius as an alternative to Sphinx
+
+I will not be happy about that.
+
+> - Expanding the set of commands
+
+K
+> - Some minor changes in the Spanish translation of the commands
+
+K
+
+> We would like to make our changes available as part of the Gnome Voice
+> Control project. How should we proceed?
+
+If you want to continue development on Berlios, register there, I will
+add you to the project manager. Subscribe to bugzilla component. Also
+feel free to take over live.gnome.org page. I don't think
+gnome-voice-control has any other resources.
+
+
+From nshmyrev at yandex.ru  Fri Sep  3 17:30:32 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Fri, 3 Sep 2010 19:30:32 +0400
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <AANLkTinP2g=mTGTBabFP0uws4gvRBNM-7T4rEx1L3PCV@mail.gmail.com>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<AANLkTinP2g=mTGTBabFP0uws4gvRBNM-7T4rEx1L3PCV@mail.gmail.com>
+Message-ID: <AANLkTika9d8aCjP0hEcyD7nwRaO+uUD3Ae2yEqWH_ydx@mail.gmail.com>
+
+2010/9/3, Guillermo Perez <g.perez at indisys.es>:
+> Hello Nickolay,
+>
+> The Spanish model available for Sphinx is built with Mexican-Spanish, we
+> need it for Spanish-Spanish. Furthermore, this model gives very low
+> recognition rates, mainly because it was built for large vocabulary
+> applications but with very few recordings.
+
+CMUSphinx provides two models - Mexican Spanish and Spanish Spanish.
+You probably need to revisit website and try a new model.
+
+http://cmusphinx.sourceforge.net/2010/08/voxforge-spanish-model-released/
+
+> We are building a specific acoustic model for the concrete set of commands
+> that will be used in this application. Our goal is to have a high
+> recognition rate.
+
+I'm not sure how are you going to align concrete set of commands with
+the GVC design able to dynamically build grammar from the interface. I
+also don't think that you can get any significant gain from
+specialized model. The model is somewhat important, but it's a minor
+part of the whole application. And core issues with voice-based
+command and control lie outside of the model training. Things like
+WakeUpWord, adaptation and correction are way more important.
+
+> Can I ask you why you wouldn't be happy with GVC independent of the
+> particular recognition engine used?
+
+Why I should be happy? It introduce unneeded complexity without any
+gain. I don't think that writing the API is something GVC should focus
+on. Can you explain why do you need another engine? What are
+advantages of Julius?
+
+
+From nshmyrev at yandex.ru  Fri Sep  3 22:02:59 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Sat, 04 Sep 2010 00:02:59 +0400
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <AANLkTi=ZtZCWDZRUbGU11pe6EVckx-H+mN-Sicje9esZ@mail.gmail.com>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<AANLkTinP2g=mTGTBabFP0uws4gvRBNM-7T4rEx1L3PCV@mail.gmail.com>
+	<AANLkTika9d8aCjP0hEcyD7nwRaO+uUD3Ae2yEqWH_ydx@mail.gmail.com>
+	<AANLkTi=ZtZCWDZRUbGU11pe6EVckx-H+mN-Sicje9esZ@mail.gmail.com>
+Message-ID: <1283544179.10070.9.camel@localhost.localdomain>
+
+? ???, 03/09/2010 ? 18:39 +0200, Guillermo Perez ?????:
+> Thanks for this link! It seems that it has just been released, I was
+> not aware. I thought you meant the old (mexican) one, sorry. Of course
+> we are going to try it.
+> 
+> 
+> It is true that we lose flexibility by having a fixed predefined set
+> of commands, but we believe that it will let us have higher
+> recognition rates.
+
+It's better to discuss numbers here. Without that it's hard to plan
+anything. I think in realistic conditions with background noise and OOV
+words you'll get 10% WER both on generic model and hand-made small
+vocabulary model.
+
+> Sphinx is also great, but Julius let us use HTK. From our point of
+> view, this is a very important advantage if you need to build new
+> models (which is the case of most of the languages).
+
+Again, without numbers it's hard to discuss this. My goal is to point
+you that to make this decision you need fair comparison. FYI, you can
+use HTK models in CMUSphinx. The conversion scripts are available on the
+website.
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100904/59c3a781/attachment.pgp>
+
+From g.perez at indisys.es  Mon Sep  6 13:04:44 2010
+From: g.perez at indisys.es (=?utf-8?Q?Guillermo_P=C3=A9rez?=)
+Date: Mon, 6 Sep 2010 13:04:44 +0200
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <1283544179.10070.9.camel@localhost.localdomain>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<AANLkTinP2g=mTGTBabFP0uws4gvRBNM-7T4rEx1L3PCV@mail.gmail.com>
+	<AANLkTika9d8aCjP0hEcyD7nwRaO+uUD3Ae2yEqWH_ydx@mail.gmail.com>
+	<AANLkTi=ZtZCWDZRUbGU11pe6EVckx-H+mN-Sicje9esZ@mail.gmail.com>
+	<1283544179.10070.9.camel@localhost.localdomain>
+Message-ID: <F49E2068F95F4A838E5D36E7661649C1@Latitude>
+
+I agree with you: let's wait for the numbers. As soon as we complete our 
+acoustic model we will make this comparison and share it with you.
+
+However we have already identified a problem with the Spanish model from 
+Sphinx: the .phone file doesn't include the "Z" phoneme (needed in Spanish, 
+not in mexican). The .dic is also wrong (e.g. "MAXIMIZAR" is transcribed as 
+"M A X I M I S A R"). We can change the .dic, but we need the model to be 
+trained correctly with all the Spanish phonemes. I think we should talk to 
+the Sphinx guys.
+
+Regarding the HTK converter, we discarded it at the beginning because the 
+old version seemed not to work very well. There is a new one that has just 
+been released, but we have not tried it yet. However, it looks easier to use 
+an engine that allows you to use the models without an intermediate 
+conversion.
+
+
+? ???, 03/09/2010 ? 18:39 +0200, Guillermo Perez ?????:
+> Thanks for this link! It seems that it has just been released, I was
+> not aware. I thought you meant the old (mexican) one, sorry. Of course
+> we are going to try it.
+>
+>
+> It is true that we lose flexibility by having a fixed predefined set
+> of commands, but we believe that it will let us have higher
+> recognition rates.
+
+It's better to discuss numbers here. Without that it's hard to plan
+anything. I think in realistic conditions with background noise and OOV
+words you'll get 10% WER both on generic model and hand-made small
+vocabulary model.
+
+> Sphinx is also great, but Julius let us use HTK. From our point of
+> view, this is a very important advantage if you need to build new
+> models (which is the case of most of the languages).
+
+Again, without numbers it's hard to discuss this. My goal is to point
+you that to make this decision you need fair comparison. FYI, you can
+use HTK models in CMUSphinx. The conversion scripts are available on the
+website.
+
+
+
+
+
+From nshmyrev at yandex.ru  Mon Sep  6 22:50:04 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Tue, 07 Sep 2010 00:50:04 +0400
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <21E7E13D8D924297B93D9D2A01AF5BA0@Latitude>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<D779363CEE194E549CE567FC44A66678@Latitude>
+	<AANLkTi=YX8CVuoZe0HUNHL3yX8v43PK52zc_4Pj-3UHK@mail.gmail.com>
+	<21E7E13D8D924297B93D9D2A01AF5BA0@Latitude>
+Message-ID: <1283806204.6095.3.camel@localhost.localdomain>
+
+? ???, 06/09/2010 ? 18:26 +0200, Guillermo P?rez ?????:
+> > If you have better dictionary there is no problem to retrain and
+> > release model using it. I wouldn't distinguish between Mexican and
+> > Catalan Spanish to be honest. I think model could be good enough to
+> > work with both. Voxforge data contains more Catalan Spanish as far as
+> > I know. The great value is that the acoustic database training data is
+> > open and you can do whatever you want with it.
+> 
+> I'm not sure to have understood your point here. Let me check it:
+> 
+> - When you mention "Catalan Spanish" you mean "Castilian Spanish" (es-ES, 
+> the Spanish spoken in Spain), right? "Catalan" is a different language, the 
+> one spoken in Catalonia.
+
+Yes, sorry about that, I often confuse them. I mean Castilian of course.
+
+> - Are you suggesting that we should share the same acoustic model for es-ES 
+> and mx-ES? I don't think so. There is a big difference between Castilian 
+> Spanish (es-ES) and Mexican Spanish (mx-ES, the Spanish sponken in Mexico). 
+> Namely, the phoneme "Z" is used in Castilian Spanish in a huge number of 
+> words, while in Mexico they use "S". We have already tried (informally) the 
+> model released and is unable to identify very common words like "cerrar" ( 
+> "Z E R R A R", "to close"). If we carry out an evaluation now, the results 
+> will be very poor.
+
+The current model is very accurate, it has 96.5% accuracy on test set,
+way more than English Voxforge model (90%). Of course we can try your
+alternative dictionary and compare.
+
+> Our intuition is that updating the .phone file (i.e., adding the "Z" 
+> phoneme) and creating an es-ES version of the .dic file will imply a big 
+> improvement of the model performance. If you agree, we can generate these 
+> two files with the correct es-ES phonemes. Then, we would need your help to 
+> re-train the model and see what happens...
+
+Yes, please do.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100907/3ccb7b3c/attachment.pgp>
+
+From nshmyrev at yandex.ru  Wed Sep 15 14:05:59 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Wed, 15 Sep 2010 16:05:59 +0400
+Subject: [Festlang-gvc] es_ES Dictionary for Sphinx
+In-Reply-To: <1BCF454823684A29AC263A4ABA0208B3@Latitude>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<D779363CEE194E549CE567FC44A66678@Latitude>
+	<AANLkTi=YX8CVuoZe0HUNHL3yX8v43PK52zc_4Pj-3UHK@mail.gmail.com>
+	<21E7E13D8D924297B93D9D2A01AF5BA0@Latitude>
+	<1283806204.6095.3.camel@localhost.localdomain>
+	<1BCF454823684A29AC263A4ABA0208B3@Latitude>
+Message-ID: <AANLkTikVq32MA7=8nUVEhWe-Vd9+sCup_C2kXgPZdpDz@mail.gmail.com>
+
+2010/9/15, Guillermo P?rez <g.perez at indisys.es>:
+> Hello Nickolay,
+>
+> Please find attached the es_ES version of the .dict and .phone files.
+
+Thanks Guillermo, that's a great job. I've retrained model already which is here
+
+https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Voxforge%20Spanish/voxforge-es-0.1.1.tar.gz/download
+
+It appears to be more accurate then previous one, you were right about it.
+
+I suggest you to try to build model yourself, its very easy comparing
+to HTK. And you will be able to fix bugs and add more data there.
+
+> Some comments:
+>
+> 1 - Of course, feel free to use, modify and distribute it if you think it
+> can be useful.
+> 2 - Changes in the .phone file:
+>     2.1 - I have deleted the "V" phoneme in the .phone file since there is
+> no distinction with "B" in Spanish.
+>     2.2 - I have included the "Z" phoneme in the .phone file since there is
+
+Thats a great summary. Probably in the future we'll need to fix the
+method we build
+the dictionary for spanish. It might be the assistance from Festival
+TTS voice or other
+TTS system or machine learning or hand-made rules. It would be nice to
+have a code to be able to build pronunciation for arbitrary word. It
+should be doable for Spanish. That text could include pronunciation
+variants for Mexican Spanish
+
+> 8 - Although we began our discussion within Gnome Voice Control mailing
+> list, all of these points are very much Spanish-Sphinx related. Shouldn't we
+> forward this mail to one of the cmusphinx mailing lists?
+
+That's up to you. I'm comfortable with both.
+
+
+From g.perez at indisys.es  Wed Sep 15 18:50:30 2010
+From: g.perez at indisys.es (=?utf-8?Q?Guillermo_P=C3=A9rez?=)
+Date: Wed, 15 Sep 2010 18:50:30 +0200
+Subject: [Festlang-gvc] es_ES Dictionary for Sphinx
+In-Reply-To: <AANLkTikVq32MA7=8nUVEhWe-Vd9+sCup_C2kXgPZdpDz@mail.gmail.com>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude><AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com><D779363CEE194E549CE567FC44A66678@Latitude><AANLkTi=YX8CVuoZe0HUNHL3yX8v43PK52zc_4Pj-3UHK@mail.gmail.com><21E7E13D8D924297B93D9D2A01AF5BA0@Latitude><1283806204.6095.3.camel@localhost.localdomain><1BCF454823684A29AC263A4ABA0208B3@Latitude>
+	<AANLkTikVq32MA7=8nUVEhWe-Vd9+sCup_C2kXgPZdpDz@mail.gmail.com>
+Message-ID: <1322C0B6864E491AB1E3D119543DFC76@Latitude>
+
+>> Thanks Guillermo, that's a great job. I've retrained model already which 
+>> is here
+>>
+>> https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Voxforge%20Spanish/voxforge-es-0.1.1.tar.gz/download
+>>
+>> It appears to be more accurate then previous one, you were right about 
+>> it.
+
+I'm glad that you found it useful. We are also going to include the new 
+model in our work, thanks a lot.
+
+>> Thats a great summary. Probably in the future we'll need to fix the
+>> method we build
+>> the dictionary for spanish. It might be the assistance from Festival
+>> TTS voice or other
+>> TTS system or machine learning or hand-made rules. It would be nice to
+>> have a code to be able to build pronunciation for arbitrary word. It
+>> should be doable for Spanish. That text could include pronunciation
+>> variants for Mexican Spanish
+
+Actually we worked in a previous project with Festival. We built a couple of 
+Spanish voices (male/female) that can be downloaded from 
+http://forja.guadalinex.org/frs/download.php/249/JuntaDeAndalucia_es_pa_diphone.zip. 
+During this project we had to improve the pronunciation module, including 
+the addenda (equivalent to the pronounciation dictionary) and the letter to 
+sound rules (the hand-made rules you mentioned). Both modules are included 
+in the "JuntaDeAndalucia_es_pa_lexicon.scm" file within the zip file.
+
+You can of course use these files if you find them useful. However, there 
+are two drawbacks:
+
+- The set of phonemes is different (larger)
+- It is written in LISP...
+
+>> 8 - Although we began our discussion within Gnome Voice Control mailing
+>> list, all of these points are very much Spanish-Sphinx related. Shouldn't 
+>> we
+>> forward this mail to one of the cmusphinx mailing lists?
+
+> That's up to you. I'm comfortable with both.
+
+Well, some of my comments apply to both mx-ES and es-ES, so at least we 
+should talk to the guy responsible for the mexican model. Do you know who he 
+is?
+
+
+
+From g.perez at indisys.es  Wed Sep 15 11:11:05 2010
+From: g.perez at indisys.es (=?utf-8?Q?Guillermo_P=C3=A9rez?=)
+Date: Wed, 15 Sep 2010 11:11:05 +0200
+Subject: [Festlang-gvc] es_ES Dictionary for Sphinx
+In-Reply-To: <1283806204.6095.3.camel@localhost.localdomain>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<D779363CEE194E549CE567FC44A66678@Latitude>
+	<AANLkTi=YX8CVuoZe0HUNHL3yX8v43PK52zc_4Pj-3UHK@mail.gmail.com>
+	<21E7E13D8D924297B93D9D2A01AF5BA0@Latitude>
+	<1283806204.6095.3.camel@localhost.localdomain>
+Message-ID: <1BCF454823684A29AC263A4ABA0208B3@Latitude>
+
+Hello Nickolay,
+
+Please find attached the es_ES version of the .dict and .phone files.
+
+Some comments:
+
+1 - Of course, feel free to use, modify and distribute it if you think it 
+can be useful.
+2 - Changes in the .phone file:
+    2.1 - I have deleted the "V" phoneme in the .phone file since there is 
+no distinction with "B" in Spanish.
+    2.2 - I have included the "Z" phoneme in the .phone file since there is 
+a difference with "S" in certain cases.
+3 - Changes in the .dict file:
+    3.1 - Substitution of "V" by "B" phoneme in all cases
+    3.2 - Substitution of "S" by "Z" in certain cases (namely, every 
+occurance of letter "z" and some occurances of "c", depending on the 
+context: "ce", "ci")
+    3.3 - Substitution of "S" by "S Z" in certain cases (namely, every 
+occurance of letters "sc" followed by "e" or "i").
+    3.4 - Transciption of "veru?nza" as "B E R G U E N Z A" (however, 
+"vergu?nza" is incorrect in Spanish. The correct word is "verg?enza").
+4 - I have noticed what I believe to be bugs in the mx_ES version:
+    4.1 - I beleive that points 2.1, 3.1 and 3.4 should be applied to mx_ES 
+also.
+    4.2 - The transcriptions of the words "ejercicio", "ejercicios", 
+"adyacente" and "subyace" include "K" instead of "S" ("Z" in es_ES).
+    4.3 - The transcription of the isolated letter "C" is "K". I believe 
+this is a mistake, it should be either "S" or "S E".
+5- Some questions that could imply additional changes (all of them apply to 
+both es_ES and mx_ES):
+    5.1 - The isolated letters are transcribed as phonemes. Shouldn't they 
+be transcribed as a "word"? For instance "D" should be transcribed as "D E".
+    5.2 - There are foreign words that are litterally transcribed, while the 
+pronounciation is generally adapted to the foreign one. For instance 
+"Chelsea" is transcribed as "CH E L S E A " but one would actually read 
+something like "CH E L S I". There are several such words,     like 
+"Francesco", "Jesse", "Jessica", "Goldshine", "Stosic", "Lawrence", 
+"Toulouse", "Versace".
+    5.3 - A similar case to the previous one is the set of words beginning 
+with "S" followed by a consonant: e.g. "Star" is transcribed as "S T A R", 
+but one would add an "E" at the beginning: "E S T A R". This applies to both 
+es_ES and mx_ES.
+    5.4 - The word "EZLN" (not "_E_Z_L_N") is transcribed as "E S L N" in 
+mx_ES. This is actually unpronounceable in Spanish, one would actually read 
+it as "_E_Z_L_N".
+6 - Since the phoneme "S" has been splitted in "S" and "Z" for the es_ES 
+version of the dict, there could be some missing contexts for these 
+phonemes. For instance, I have noticed that there is no occurance of the 
+triplets "U Z B" (used in "Uzbekist?n"), "S Z O" ("used in "Deszocar") or "S 
+Z U" (used in "Deszumar"). Is there anyway to check it?
+7 - I believe that these modifications should improve the performance for 
+es_ES speakers, but I haven't build the acoustic model with this 
+dictionary... Could anyone do that?...
+8 - Although we began our discussion within Gnome Voice Control mailing 
+list, all of these points are very much Spanish-Sphinx related. Shouldn't we 
+forward this mail to one of the cmusphinx mailing lists?
+
+Regards,
+Guillermo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge_es_ES_sphinx.dic
+Type: application/octet-stream
+Size: 714549 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge_es_ES_sphinx.phone
+Type: application/octet-stream
+Size: 58 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment-0001.obj>
+
+From nshmyrev at yandex.ru  Fri Sep 17 00:45:47 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Fri, 17 Sep 2010 02:45:47 +0400
+Subject: [Festlang-gvc] es_ES Dictionary for Sphinx
+In-Reply-To: <1322C0B6864E491AB1E3D119543DFC76@Latitude>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+	<AANLkTi=LjPHaKjgX3yiDDRgpLAjvA=j9GxexCMYbcU+5@mail.gmail.com>
+	<D779363CEE194E549CE567FC44A66678@Latitude>
+	<AANLkTi=YX8CVuoZe0HUNHL3yX8v43PK52zc_4Pj-3UHK@mail.gmail.com>
+	<21E7E13D8D924297B93D9D2A01AF5BA0@Latitude>
+	<1283806204.6095.3.camel@localhost.localdomain>
+	<1BCF454823684A29AC263A4ABA0208B3@Latitude>
+	<AANLkTikVq32MA7=8nUVEhWe-Vd9+sCup_C2kXgPZdpDz@mail.gmail.com>
+	<1322C0B6864E491AB1E3D119543DFC76@Latitude>
+Message-ID: <1284677147.2226.1.camel@localhost.localdomain>
+
+? ???, 15/09/2010 ? 18:50 +0200, Guillermo P?rez ?????:
+> You can of course use these files if you find them useful. However, there 
+> are two drawbacks:
+> 
+> - The set of phonemes is different (larger)
+> - It is written in LISP...
+
+Hi Guillermo
+
+I've been developer of festival voices for 8 years, you don't need to
+tell me about lisp.
+
+> >> 8 - Although we began our discussion within Gnome Voice Control mailing
+> >> list, all of these points are very much Spanish-Sphinx related. Shouldn't 
+> >> we
+> >> forward this mail to one of the cmusphinx mailing lists?
+> 
+> > That's up to you. I'm comfortable with both.
+> 
+> Well, some of my comments apply to both mx-ES and es-ES, so at least we 
+> should talk to the guy responsible for the mexican model. Do you know who he 
+> is?
+
+No, I'm not aware about him. Anyway I don't think he is still
+interested, I think it was more like a graduation project.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100917/353f52ad/attachment.pgp>
+

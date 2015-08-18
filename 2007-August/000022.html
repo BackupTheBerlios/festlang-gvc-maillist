@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] gnome-voice-control using standalone gst-sphinx	plugins
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20gnome-voice-control%20using%20standalone%20gst-sphinx%0A%09plugins&In-Reply-To=%3C46CF2E27.4060707%40cs.cmu.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000021.html">
+   <LINK REL="Next"  HREF="000023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] gnome-voice-control using standalone gst-sphinx	plugins</H1>
+    <B>David Huggins-Daines</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20gnome-voice-control%20using%20standalone%20gst-sphinx%0A%09plugins&In-Reply-To=%3C46CF2E27.4060707%40cs.cmu.edu%3E"
+       TITLE="[Festlang-gvc] gnome-voice-control using standalone gst-sphinx	plugins">dhuggins at cs.cmu.edu
+       </A><BR>
+    <I>Fri Aug 24 21:14:47 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000021.html">[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu
+</A></li>
+        <LI>Next message: <A HREF="000023.html">[Festlang-gvc] gnome-voice-control using standalone gst-sphinx plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I've merged some code from g-v-c into my standalone GStreamer plugins 
+for Sphinx3 and PocketSphinx, which you can find at:
+
+<A HREF="https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/gst-sphinx">https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/gst-sphinx</A>
+
+The very cool thing about these is that they enable ASR to work on the 
+Nokia N800...
+
+Anyway, I also extended these plugins to support FSG switching as done 
+by g-v-c, and to verify that this works, I &quot;ported&quot; g-v-c over to the 
+standalone PocketSphinx plugin (I actually don't know how to do FSG 
+switching in Sphinx3, but once that works, we can try it out with the 
+Sphinx3 decoder as well).
+
+A patch (which you are not expected to apply) is attached here.
+
+We should maybe talk about whether you want to continue to have your own 
+internal plugin for Sphinx (which is a perfectly reasonable thing to 
+do), or if you want to use the standalone ones which are not released 
+yet, although I hope to make a 0.1 release soon if only so they could be 
+packaged for Debian/Ubuntu/Maemo.
+
+For my part, I *think* that the standalone plugins will be incorporated 
+into the next releases of Sphinx3 and PocketSphinx but those could be a 
+long way away.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: gvc-gst-sphinx.diff
+Type: text/x-patch
+Size: 6659 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20070824/1611bba2/attachment.bin">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20070824/1611bba2/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000021.html">[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu
+</A></li>
+	<LI>Next message: <A HREF="000023.html">[Festlang-gvc] gnome-voice-control using standalone gst-sphinx plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

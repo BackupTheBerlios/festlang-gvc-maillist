@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] Recognition on Keypress
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Recognition%20on%20Keypress&In-Reply-To=%3C1187040353.8266.7.camel%40shadow.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] Recognition on Keypress</H1>
+    <B>Nickolay V. Shmyrev</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Recognition%20on%20Keypress&In-Reply-To=%3C1187040353.8266.7.camel%40shadow.local%3E"
+       TITLE="[Festlang-gvc] Recognition on Keypress">nshmyrev at yandex.ru
+       </A><BR>
+    <I>Mon Aug 13 23:25:53 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Festlang-gvc] Recognition on Keypress
+</A></li>
+        <LI>Next message: <A HREF="000012.html">[Festlang-gvc] Updated acoustic model in PocketSphinx SVN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&#1042; &#1055;&#1085;&#1076;, 13/08/2007 &#1074; 13:27 -0300, Raphael Nunes &#1087;&#1080;&#1096;&#1077;&#1090;:
+&gt;<i> Hi,
+</I>&gt;<i> 
+</I>&gt;<i>     I made a test code to make the recognition on keypress using SPI,
+</I>&gt;<i> but isn't working and I don't know why. I am sending the diff file
+</I>&gt;<i> attached.
+</I>&gt;<i> 
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Raphael Nunes
+</I>
+Please try something like the attached patch, it works fine for me. But
+I suppose we should somehow make it better probably with
+gdk_window_add_filter. For more details look into at-spi sources
+(at-spi/registryd/deviceeventcontroller) and gdk_window_add filter
+documentation. Although ally usage here also looks fine.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: a.diff
+Type: text/x-patch
+Size: 1849 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20070814/e956e91c/attachment.bin">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20070814/e956e91c/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Festlang-gvc] Recognition on Keypress
+</A></li>
+	<LI>Next message: <A HREF="000012.html">[Festlang-gvc] Updated acoustic model in PocketSphinx SVN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%0A%20with%20own%20model&In-Reply-To=%3C1294315784.2145.54.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000069.html">
+   <LINK REL="Next"  HREF="000071.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model</H1>
+    <B>Nickolay V. Shmyrev</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%0A%20with%20own%20model&In-Reply-To=%3C1294315784.2145.54.camel%40localhost.localdomain%3E"
+       TITLE="[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model">nshmyrev at nexiwave.com
+       </A><BR>
+    <I>Thu Jan  6 13:09:44 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000069.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+        <LI>Next message: <A HREF="000071.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#70">[ date ]</a>
+              <a href="thread.html#70">[ thread ]</a>
+              <a href="subject.html#70">[ subject ]</a>
+              <a href="author.html#70">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&#1042; &#1042;&#1090;&#1088;, 04/01/2011 &#1074; 23:03 +0530, Hanitha Gnanathesigar &#1087;&#1080;&#1096;&#1077;&#1090;:
+&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Thanks Nickolay.
+</I>&gt;<i> 
+</I>&gt;<i> 1. sorry, i could n't figure out what u meant by output of the applet.
+</I>&gt;<i> I'm debugging by locking the voice-control-applet in the terminal and
+</I>&gt;<i> then adding to the panel.
+</I>
+Hello
+
+You are on the right track, only minor issues left now ;)
+
+&gt;<i> 2. Initially there was an error abt a duplicate entry in the
+</I>&gt;<i> desktop-control-en-dict.
+</I>&gt;<i> Yesterday i got segmentation fault when try to call ps_update_fsgset
+</I>&gt;<i> (sink-&gt;decoder) in gst_sphinx_sink_set_fsg procedure.
+</I>&gt;<i> today when i redo the dictionary editing the error is fixed. Now It is
+</I>&gt;<i> listening. Most of the time as soon as it executes the command, i get
+</I>&gt;<i> segmentation fault. Looks like coming in the same point.
+</I>&gt;<i> Please find my log entry attached in eng_log file.
+</I>&gt;<i> Though log file is for wsj1 models from pocketsphinc 0.5.1, behaviour
+</I>&gt;<i> was same for en_US models from pocketsphinx0.6.1 
+</I>
+No, it can't be the same. I recommend you to carefully check you are NOT
+using 0.5.1
+
+&gt;<i> 3. when i use the tamil model it gave segmentation fault as before.
+</I>&gt;<i> Error looks like coming when try to call ps_update_fsgset
+</I>&gt;<i> (sink-&gt;decoder) in gst_sphinx_sink_set_fsg procedure.
+</I>&gt;<i> Please find my log entry attached in ta_log file
+</I>&gt;<i> also tamil hmm and lmm folders attached.
+</I>
+Those logs are useless for me. If you want to debug segmentation
+violations you need to use the debugger. You can learn more about
+collecting traces here:
+
+<A HREF="http://live.gnome.org/GettingTraces/Details">http://live.gnome.org/GettingTraces/Details</A>
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110106/ef43c5ad/attachment.pgp">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110106/ef43c5ad/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000069.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+	<LI>Next message: <A HREF="000071.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#70">[ date ]</a>
+              <a href="thread.html#70">[ thread ]</a>
+              <a href="subject.html#70">[ subject ]</a>
+              <a href="author.html#70">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

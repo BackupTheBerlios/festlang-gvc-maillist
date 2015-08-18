@@ -1,0 +1,70 @@
+From chiragjain1989 at gmail.com  Sun Apr  4 15:12:43 2010
+From: chiragjain1989 at gmail.com (chirag jain)
+Date: Sun, 4 Apr 2010 05:12:43 -0800
+Subject: [Festlang-gvc] Error during SVN checkout of Gnome Voice control
+Message-ID: <z2ze116096a1004040612h6ddae5f5mb1f79212d14519b1@mail.gmail.com>
+
+Hi,
+
+I am first time installing Gnome Voice Control on my Ubuntu Karmic 9.10.
+While doing the SVN checkout I got the following logs:
+
+chirag at chirag-desktop:~/Desktop/gsoc$ svn checkout
+http://svn.berlios.de/svnroot/repos/festlang/trunk/gnome-voice-control
+
+svn: Server sent unexpected return value (400 Bad Request) in response to
+REPORT request for '/svnroot/repos/festlang/!svn/vcc/default'
+
+Can you please look into the error and help me??
+
+Thanks and Regards
+
+-- 
+Chirag Jain
+
+Undergraduate Student
+Netaji Subash Institute of Technology
+New Delhi
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100404/31795737/attachment.html>
+
+From nshmyrev at yandex.ru  Sun Apr  4 18:01:48 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Sun, 04 Apr 2010 20:01:48 +0400
+Subject: [Festlang-gvc] Error during SVN checkout of Gnome Voice control
+In-Reply-To: <z2ze116096a1004040612h6ddae5f5mb1f79212d14519b1@mail.gmail.com>
+References: <z2ze116096a1004040612h6ddae5f5mb1f79212d14519b1@mail.gmail.com>
+Message-ID: <1270396908.15465.2.camel@localhost.localdomain>
+
+? ???, 04/04/2010 ? 05:12 -0800, chirag jain ?????:
+> Hi,
+> 
+> 
+> I am first time installing Gnome Voice Control on my Ubuntu Karmic
+> 9.10. While doing the SVN checkout I got the following logs:
+> 
+> 
+> chirag at chirag-desktop:~/Desktop/gsoc$ svn checkout
+> http://svn.berlios.de/svnroot/repos/festlang/trunk/gnome-voice-control
+> 
+> 
+> svn: Server sent unexpected return value (400 Bad Request) in response
+> to REPORT request for '/svnroot/repos/festlang/!svn/vcc/default'
+> 
+> Can you please look into the error and help me??
+
+Your network is protected by HTTP proxy most likely. For more details
+see
+
+
+http://subversion.apache.org/faq.html#proxy
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100404/9dfeb9be/attachment.pgp>
+

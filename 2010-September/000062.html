@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] es_ES Dictionary for Sphinx
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2010-September/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20es_ES%20Dictionary%20for%20Sphinx&In-Reply-To=%3C1BCF454823684A29AC263A4ABA0208B3%40Latitude%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000059.html">
+   <LINK REL="Next"  HREF="000060.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] es_ES Dictionary for Sphinx</H1>
+    <B>Guillermo P&#233;rez</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20es_ES%20Dictionary%20for%20Sphinx&In-Reply-To=%3C1BCF454823684A29AC263A4ABA0208B3%40Latitude%3E"
+       TITLE="[Festlang-gvc] es_ES Dictionary for Sphinx">g.perez at indisys.es
+       </A><BR>
+    <I>Wed Sep 15 11:11:05 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000059.html">[Festlang-gvc] GVC in Spanish with Julius
+</A></li>
+        <LI>Next message: <A HREF="000060.html">[Festlang-gvc] es_ES Dictionary for Sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Nickolay,
+
+Please find attached the es_ES version of the .dict and .phone files.
+
+Some comments:
+
+1 - Of course, feel free to use, modify and distribute it if you think it 
+can be useful.
+2 - Changes in the .phone file:
+    2.1 - I have deleted the &quot;V&quot; phoneme in the .phone file since there is 
+no distinction with &quot;B&quot; in Spanish.
+    2.2 - I have included the &quot;Z&quot; phoneme in the .phone file since there is 
+a difference with &quot;S&quot; in certain cases.
+3 - Changes in the .dict file:
+    3.1 - Substitution of &quot;V&quot; by &quot;B&quot; phoneme in all cases
+    3.2 - Substitution of &quot;S&quot; by &quot;Z&quot; in certain cases (namely, every 
+occurance of letter &quot;z&quot; and some occurances of &quot;c&quot;, depending on the 
+context: &quot;ce&quot;, &quot;ci&quot;)
+    3.3 - Substitution of &quot;S&quot; by &quot;S Z&quot; in certain cases (namely, every 
+occurance of letters &quot;sc&quot; followed by &quot;e&quot; or &quot;i&quot;).
+    3.4 - Transciption of &quot;veru&#235;nza&quot; as &quot;B E R G U E N Z A&quot; (however, 
+&quot;vergu&#235;nza&quot; is incorrect in Spanish. The correct word is &quot;verg&#252;enza&quot;).
+4 - I have noticed what I believe to be bugs in the mx_ES version:
+    4.1 - I beleive that points 2.1, 3.1 and 3.4 should be applied to mx_ES 
+also.
+    4.2 - The transcriptions of the words &quot;ejercicio&quot;, &quot;ejercicios&quot;, 
+&quot;adyacente&quot; and &quot;subyace&quot; include &quot;K&quot; instead of &quot;S&quot; (&quot;Z&quot; in es_ES).
+    4.3 - The transcription of the isolated letter &quot;C&quot; is &quot;K&quot;. I believe 
+this is a mistake, it should be either &quot;S&quot; or &quot;S E&quot;.
+5- Some questions that could imply additional changes (all of them apply to 
+both es_ES and mx_ES):
+    5.1 - The isolated letters are transcribed as phonemes. Shouldn't they 
+be transcribed as a &quot;word&quot;? For instance &quot;D&quot; should be transcribed as &quot;D E&quot;.
+    5.2 - There are foreign words that are litterally transcribed, while the 
+pronounciation is generally adapted to the foreign one. For instance 
+&quot;Chelsea&quot; is transcribed as &quot;CH E L S E A &quot; but one would actually read 
+something like &quot;CH E L S I&quot;. There are several such words,     like 
+&quot;Francesco&quot;, &quot;Jesse&quot;, &quot;Jessica&quot;, &quot;Goldshine&quot;, &quot;Stosic&quot;, &quot;Lawrence&quot;, 
+&quot;Toulouse&quot;, &quot;Versace&quot;.
+    5.3 - A similar case to the previous one is the set of words beginning 
+with &quot;S&quot; followed by a consonant: e.g. &quot;Star&quot; is transcribed as &quot;S T A R&quot;, 
+but one would add an &quot;E&quot; at the beginning: &quot;E S T A R&quot;. This applies to both 
+es_ES and mx_ES.
+    5.4 - The word &quot;EZLN&quot; (not &quot;_E_Z_L_N&quot;) is transcribed as &quot;E S L N&quot; in 
+mx_ES. This is actually unpronounceable in Spanish, one would actually read 
+it as &quot;_E_Z_L_N&quot;.
+6 - Since the phoneme &quot;S&quot; has been splitted in &quot;S&quot; and &quot;Z&quot; for the es_ES 
+version of the dict, there could be some missing contexts for these 
+phonemes. For instance, I have noticed that there is no occurance of the 
+triplets &quot;U Z B&quot; (used in &quot;Uzbekist&#225;n&quot;), &quot;S Z O&quot; (&quot;used in &quot;Deszocar&quot;) or &quot;S 
+Z U&quot; (used in &quot;Deszumar&quot;). Is there anyway to check it?
+7 - I believe that these modifications should improve the performance for 
+es_ES speakers, but I haven't build the acoustic model with this 
+dictionary... Could anyone do that?...
+8 - Although we began our discussion within Gnome Voice Control mailing 
+list, all of these points are very much Spanish-Sphinx related. Shouldn't we 
+forward this mail to one of the cmusphinx mailing lists?
+
+Regards,
+Guillermo
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge_es_ES_sphinx.dic
+Type: application/octet-stream
+Size: 714549 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment.obj">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment.obj</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge_es_ES_sphinx.phone
+Type: application/octet-stream
+Size: 58 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment-0001.obj">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20100915/135de4f5/attachment-0001.obj</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000059.html">[Festlang-gvc] GVC in Spanish with Julius
+</A></li>
+	<LI>Next message: <A HREF="000060.html">[Festlang-gvc] es_ES Dictionary for Sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

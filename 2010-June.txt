@@ -1,0 +1,176 @@
+From gvc at reghif.com  Wed Jun 30 12:55:04 2010
+From: gvc at reghif.com (Tarik Reghif)
+Date: Wed, 30 Jun 2010 11:55:04 +0100
+Subject: [Festlang-gvc] GVC Going Forward
+Message-ID: <AANLkTilGalPHzsRUCaAAlqDnVWyrh6QSNXsKFix1nj8V@mail.gmail.com>
+
+Hi,
+
+I've been trying to find decent voice control software for Linux and
+this is the nearest to my needs that I've found.
+
+I'm wondering if there's any activity on this project. I have ideas
+etc and would like to make some changes.
+
+I worked as a programmer for a year after my degree, but haven't done
+much since then. I'm willing to get stuck in, but was hoping for some
+guidance etc.
+
+Basically, is there anybody out there?
+
+
+From nshmyrev at yandex.ru  Wed Jun 30 13:13:24 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Wed, 30 Jun 2010 15:13:24 +0400
+Subject: [Festlang-gvc] GVC Going Forward
+In-Reply-To: <AANLkTilGalPHzsRUCaAAlqDnVWyrh6QSNXsKFix1nj8V@mail.gmail.com>
+References: <AANLkTilGalPHzsRUCaAAlqDnVWyrh6QSNXsKFix1nj8V@mail.gmail.com>
+Message-ID: <177971277896404@web83.yandex.ru>
+
+30.06.10, 15:05, "Tarik Reghif" <gvc at reghif.com>:
+
+> Hi,
+>  
+>  I've been trying to find decent voice control software for Linux and
+>  this is the nearest to my needs that I've found.
+>  
+>  I'm wondering if there's any activity on this project. 
+
+There is no activity on this project right now. Partially thats because GNOME project discredited itself with absense of vision, leadership and constant
+changes for nothing. Not quite professional approach they have repels the developers from it.
+
+Among other projects that are actively developed right now are
+
+http://simon-listens.org (could increase it's quality being ported to CMUSphinx)
+http://vedics.sourceforge.net (rather naive thing).
+
+>  I have ideas etc and would like to make some changes.
+
+You are welcome to do that.
+
+>  I worked as a programmer for a year after my degree, but haven't done
+>  much since then. I'm willing to get stuck in, but was hoping for some
+>  guidance etc.
+
+Feel free to ask.
+
+
+From gvc at reghif.com  Wed Jun 30 14:09:42 2010
+From: gvc at reghif.com (Tarik Reghif)
+Date: Wed, 30 Jun 2010 13:09:42 +0100
+Subject: [Festlang-gvc] GVC Going Forward
+In-Reply-To: <177971277896404@web83.yandex.ru>
+References: <AANLkTilGalPHzsRUCaAAlqDnVWyrh6QSNXsKFix1nj8V@mail.gmail.com>
+	<177971277896404@web83.yandex.ru>
+Message-ID: <AANLkTimN2GGzjDHWU3G4WrQXd3N2YGtVeytJEHLHEnx4@mail.gmail.com>
+
+Hi,
+
+Thanks for the reply.
+
+Basically I'm after a system to do basic actions like "click" and "run
+browser", but would love to be able to do free dictation, I know this
+isn't easy so was hoping to get something that you can spell to for
+the short term.
+
+There seems to be various things about, but most seem to be old and
+dead, or are science projects rather then applications.
+
+I like GVC because I could just add it on Ubuntu from a repository,
+add it to the panel, and it just (just about) worked.
+
+The two main features I'd want to add to it are:
+a) Calibration. Presumably if I trained sphinx then it would work
+better to my voice, so surely a 5 minute calibration tool would
+improve results.
+b) Alphabet dictation. (bit hacky, but would be quite useful).
+
+What would you recommend? Reviving GVS? or going for another project?
+I've had a look at Simon, and it just doesn't seem very user friendly,
+and is quite scary from a users standpoint. VEDICS seems to be similar
+to GVS, but is only just getting started.
+
+Thanks
+
+
+On 30 June 2010 12:13, Nickolay V. Shmyrev <nshmyrev at yandex.ru> wrote:
+> 30.06.10, 15:05, "Tarik Reghif" <gvc at reghif.com>:
+>
+>> Hi,
+>>
+>> ?I've been trying to find decent voice control software for Linux and
+>> ?this is the nearest to my needs that I've found.
+>>
+>> ?I'm wondering if there's any activity on this project.
+>
+> There is no activity on this project right now. Partially thats because GNOME project discredited itself with absense of vision, leadership and constant
+> changes for nothing. Not quite professional approach they have repels the developers from it.
+>
+> Among other projects that are actively developed right now are
+>
+> http://simon-listens.org (could increase it's quality being ported to CMUSphinx)
+> http://vedics.sourceforge.net (rather naive thing).
+>
+>> ?I have ideas etc and would like to make some changes.
+>
+> You are welcome to do that.
+>
+>> ?I worked as a programmer for a year after my degree, but haven't done
+>> ?much since then. I'm willing to get stuck in, but was hoping for some
+>> ?guidance etc.
+>
+> Feel free to ask.
+>
+
+
+From nshmyrev at yandex.ru  Wed Jun 30 14:42:21 2010
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Wed, 30 Jun 2010 16:42:21 +0400
+Subject: [Festlang-gvc] GVC Going Forward
+In-Reply-To: <AANLkTimN2GGzjDHWU3G4WrQXd3N2YGtVeytJEHLHEnx4@mail.gmail.com>
+References: <AANLkTilGalPHzsRUCaAAlqDnVWyrh6QSNXsKFix1nj8V@mail.gmail.com>
+	<177971277896404@web83.yandex.ru>
+	<AANLkTimN2GGzjDHWU3G4WrQXd3N2YGtVeytJEHLHEnx4@mail.gmail.com>
+Message-ID: <225601277901741@web51.yandex.ru>
+
+30.06.10, 16:26, "Tarik Reghif" <gvc at reghif.com>:
+
+> Hi,
+>  
+>  Thanks for the reply.
+>  
+>  Basically I'm after a system to do basic actions like "click" and "run
+>  browser", but would love to be able to do free dictation, I know this
+>  isn't easy so was hoping to get something that you can spell to for
+>  the short term.
+
+It's sensless to spend your time on spelling. To implement dictation system
+you need to learn how is it done on practice and do it. There is voicekeyboard 
+project on sourceforge. There is evaldictator project from CMU.
+
+The closest one project is Parakeet http://www.keithv.com/software/parakeet/
+To implement dictation you need to build the following components:
+
+1. Initial voice enrollement for adaptation (if you haven't seen how is it
+done in Dragon Natural Speaking take a look).
+
+2. Acoustic model adaptation.
+
+3. Enrollment for language model adaptation
+
+4. Language model adaptation
+
+5. Optimization of the decoder to run at realtime speed
+
+6. Correction interface to efficiently correct errors.
+
+The question of putting it into GVC or making it standalone thing is most
+minor one here.
+
+>  I've had a look at Simon, and it just doesn't seem very user friendly,
+>  and is quite scary from a users standpoint. VEDICS seems to be similar
+>  to GVS, but is only just getting started.
+
+Yes, usability is weak side of all KDE applications unfortunately
+
+

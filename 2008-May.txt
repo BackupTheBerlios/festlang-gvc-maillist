@@ -1,0 +1,1293 @@
+From mhenriquezs at terra.cl  Sat May  3 00:31:21 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Fri, 02 May 2008 18:31:21 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+Message-ID: <481B9639.7000103@terra.cl>
+
+Hi guys:
+
+My name is Mauricio  and I write you from Chili, this is my first post 
+to the list, so Hi to ALL!! and congratulation for such a great job 
+developing a speech recognition system for linux, that is something that 
+is really missing for this OS..
+
+I have experience compiling stuff in linux but I have some basic 
+compilation problems with gnome-voice-control and the necesary sphinx 
+stuff, so if you can give me some general guide line I would really 
+apreciate..
+
+My first problem is trying to compile shpinxbase, with the svn source I 
+get this with the "configure" script:
+config.status: error: cannot find input file: Makefile.in and of course 
+I can do nothing more from there...
+
+With sphinxbase 0.3 release the autogen.sg script seems to run ok, but 
+then "make" give me a:
+Makefile.am: required file `./NEWS' not found
+Makefile.am: required file `./README' not found
+Makefile.am: required file `./AUTHORS' not found
+make: *** [Makefile.in] Error 1
+
+I suppose that are stupid problems but are really keep me far from try 
+gnome-voice.control and I think that you may be allready figure out how 
+to solve this stuff..
+
+Thanks in advance for any help or sugestion..
+
+Mauricio
+
+P.S: My system is a Fedora 8 kernel  2.6.24 with gcc 4.1.2-33, I really 
+whant to contribute to this project to help with the spanish support...
+
+
+
+
+From mhenriquezs at terra.cl  Sat May  3 02:39:10 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Fri, 02 May 2008 20:39:10 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481B9639.7000103@terra.cl>
+References: <481B9639.7000103@terra.cl>
+Message-ID: <481BB42E.6050204@terra.cl>
+
+Hi Guys:
+...some updates from the fedora front..all thing compiled fine 
+(sphinxbase, pocketsphinx and gnome-voice-control) all from las svn 
+sources...my only problem right now is how to start gnome-voice-control 
+:-) . I enable the "Assistive technologies..." from fedora menu, and the 
+right click on the panel to try to add the gnome-voice-control applet, 
+but don't show me a "Miscellaneous" entry...any idea how to start the 
+applet manually? or figure out if the correct gnome-voice-control files 
+are in the correct places?
+
+thanks..
+
+Mauricio
+
+Mauricio Henriquez wrote:
+> Hi guys:
+>
+> My name is Mauricio  and I write you from Chili, this is my first post 
+> to the list, so Hi to ALL!! and congratulation for such a great job 
+> developing a speech recognition system for linux, that is something that 
+> is really missing for this OS..
+>
+> I have experience compiling stuff in linux but I have some basic 
+> compilation problems with gnome-voice-control and the necesary sphinx 
+> stuff, so if you can give me some general guide line I would really 
+> apreciate..
+>
+> My first problem is trying to compile shpinxbase, with the svn source I 
+> get this with the "configure" script:
+> config.status: error: cannot find input file: Makefile.in and of course 
+> I can do nothing more from there...
+>
+> With sphinxbase 0.3 release the autogen.sg script seems to run ok, but 
+> then "make" give me a:
+> Makefile.am: required file `./NEWS' not found
+> Makefile.am: required file `./README' not found
+> Makefile.am: required file `./AUTHORS' not found
+> make: *** [Makefile.in] Error 1
+>
+> I suppose that are stupid problems but are really keep me far from try 
+> gnome-voice.control and I think that you may be allready figure out how 
+> to solve this stuff..
+>
+> Thanks in advance for any help or sugestion..
+>
+> Mauricio
+>
+> P.S: My system is a Fedora 8 kernel  2.6.24 with gcc 4.1.2-33, I really 
+> whant to contribute to this project to help with the spanish support...
+>
+>
+> _______________________________________________
+> Festlang-gvc mailing list
+> Festlang-gvc at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>
+>   
+
+
+
+From mhenriquezs at terra.cl  Sat May  3 03:41:53 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Fri, 02 May 2008 21:41:53 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481BB42E.6050204@terra.cl>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+Message-ID: <481BC2E1.8020709@terra.cl>
+
+finally the applet can be added to the panel, I move the 
+GNOME_VoiceControlApplet_Factory.server from 
+/usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+able to find the applet, now when I try to start the voice-control the 
+applet crash, how can I know what is the problem?? any log file?, I only 
+see a red dot with a "x" in the applet icon and then the 
+crash-applet.window asking me if I want to reload the applet..I check my 
+mix setting and seems to be ok, at least I able to record my voice with 
+audacity and other audio softwares..
+I need to make some sphinx training or some other config?, how can I be 
+sure that sphinx or other things are working correctly?
+
+Thanks
+
+Mauricio
+
+
+
+Mauricio Henriquez wrote:
+> Hi Guys:
+> ...some updates from the fedora front..all thing compiled fine 
+> (sphinxbase, pocketsphinx and gnome-voice-control) all from las svn 
+> sources...my only problem right now is how to start gnome-voice-control 
+> :-) . I enable the "Assistive technologies..." from fedora menu, and the 
+> right click on the panel to try to add the gnome-voice-control applet, 
+> but don't show me a "Miscellaneous" entry...any idea how to start the 
+> applet manually? or figure out if the correct gnome-voice-control files 
+> are in the correct places?
+>
+> thanks..
+>
+> Mauricio
+>
+> Mauricio Henriquez wrote:
+>   
+>> Hi guys:
+>>
+>> My name is Mauricio  and I write you from Chili, this is my first post 
+>> to the list, so Hi to ALL!! and congratulation for such a great job 
+>> developing a speech recognition system for linux, that is something that 
+>> is really missing for this OS..
+>>
+>> I have experience compiling stuff in linux but I have some basic 
+>> compilation problems with gnome-voice-control and the necesary sphinx 
+>> stuff, so if you can give me some general guide line I would really 
+>> apreciate..
+>>
+>> My first problem is trying to compile shpinxbase, with the svn source I 
+>> get this with the "configure" script:
+>> config.status: error: cannot find input file: Makefile.in and of course 
+>> I can do nothing more from there...
+>>
+>> With sphinxbase 0.3 release the autogen.sg script seems to run ok, but 
+>> then "make" give me a:
+>> Makefile.am: required file `./NEWS' not found
+>> Makefile.am: required file `./README' not found
+>> Makefile.am: required file `./AUTHORS' not found
+>> make: *** [Makefile.in] Error 1
+>>
+>> I suppose that are stupid problems but are really keep me far from try 
+>> gnome-voice.control and I think that you may be allready figure out how 
+>> to solve this stuff..
+>>
+>> Thanks in advance for any help or sugestion..
+>>
+>> Mauricio
+>>
+>> P.S: My system is a Fedora 8 kernel  2.6.24 with gcc 4.1.2-33, I really 
+>> whant to contribute to this project to help with the spanish support...
+>>
+>>
+>> _______________________________________________
+>> Festlang-gvc mailing list
+>> Festlang-gvc at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>>
+>>   
+>>     
+>
+> _______________________________________________
+> Festlang-gvc mailing list
+> Festlang-gvc at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>
+>   
+
+
+
+From mhenriquezs at terra.cl  Sat May  3 03:44:46 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Fri, 02 May 2008 21:44:46 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481BB42E.6050204@terra.cl>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+Message-ID: <481BC38E.8060308@terra.cl>
+
+Hi..more allmost succesfully update..
+
+finally the applet can be added to the panel, I move the 
+GNOME_VoiceControlApplet_Factory.server from 
+/usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+able to find the applet, now when I try to start the voice-control the 
+applet crash, how can I know what is the problem?? any log file?, I only 
+see a red dot with a "x" in the applet icon and then the 
+crash-applet.window asking me if I want to reload the applet..I check my 
+mix setting and seems to be ok, at least I able to record my voice with 
+audacity and other audio softwares..
+I need to make some sphinx training or some other config?, how can I be 
+sure that sphinx or other things are working correctly?
+
+Thanks
+
+Mauricio
+
+
+
+Mauricio Henriquez wrote:
+
+> > Hi Guys:
+> > ...some updates from the fedora front..all thing compiled fine 
+> > (sphinxbase, pocketsphinx and gnome-voice-control) all from las svn 
+> > sources...my only problem right now is how to start gnome-voice-control 
+> >  :-)  . I enable the "Assistive technologies..." from fedora menu, and the 
+> > right click on the panel to try to add the gnome-voice-control applet, 
+> > but don't show me a "Miscellaneous" entry...any idea how to start the 
+> > applet manually? or figure out if the correct gnome-voice-control files 
+> > are in the correct places?
+> >
+> > thanks..
+> >
+> > Mauricio
+> >
+> > Mauricio Henriquez wrote:
+> >   
+>   
+>> >> Hi guys:
+>> >>
+>> >> My name is Mauricio  and I write you from Chili, this is my first post 
+>> >> to the list, so Hi to ALL!! and congratulation for such a great job 
+>> >> developing a speech recognition system for linux, that is something that 
+>> >> is really missing for this OS..
+>> >>
+>> >> I have experience compiling stuff in linux but I have some basic 
+>> >> compilation problems with gnome-voice-control and the necesary sphinx 
+>> >> stuff, so if you can give me some general guide line I would really 
+>> >> apreciate..
+>> >>
+>> >> My first problem is trying to compile shpinxbase, with the svn source I 
+>> >> get this with the "configure" script:
+>> >> config.status: error: cannot find input file: Makefile.in and of course 
+>> >> I can do nothing more from there...
+>> >>
+>> >> With sphinxbase 0.3 release the autogen.sg script seems to run ok, but 
+>> >> then "make" give me a:
+>> >> Makefile.am: required file `./NEWS' not found
+>> >> Makefile.am: required file `./README' not found
+>> >> Makefile.am: required file `./AUTHORS' not found
+>> >> make: *** [Makefile.in] Error 1
+>> >>
+>> >> I suppose that are stupid problems but are really keep me far from try 
+>> >> gnome-voice.control and I think that you may be allready figure out how 
+>> >> to solve this stuff..
+>> >>
+>> >> Thanks in advance for any help or sugestion..
+>> >>
+>> >> Mauricio
+>> >>
+>> >> P.S: My system is a Fedora 8 kernel  2.6.24 with gcc 4.1.2-33, I really 
+>> >> whant to contribute to this project to help with the spanish support...
+>> >>
+>> >>
+>> >> _______________________________________________
+>> >> Festlang-gvc mailing list
+>> >> Festlang-gvc at lists.berlios.de
+>> >> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>> >>
+>> >>   
+>> >>     
+>>     
+> >
+> > _______________________________________________
+> > Festlang-gvc mailing list
+> > Festlang-gvc at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/festlang-gvc
+> >
+> >   
+>   
+
+_______________________________________________
+Festlang-gvc mailing list
+Festlang-gvc at lists.berlios.de
+https://lists.berlios.de/mailman/listinfo/festlang-gvc
+
+
+
+From jazzva at gmail.com  Sat May  3 04:20:26 2008
+From: jazzva at gmail.com (=?UTF-8?Q?Sa=C5=A1a_Bodiro=C5=BEa?=)
+Date: Sat, 3 May 2008 04:20:26 +0200
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <706cf3130805021919l98f2a74l4faca382da851761@mail.gmail.com>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl>
+	<706cf3130805021919l98f2a74l4faca382da851761@mail.gmail.com>
+Message-ID: <706cf3130805021920p14013b60ia92eb49ef80546b4@mail.gmail.com>
+
+Hello Mauricio,
+
+This is something similar to call that I used in Ubuntu's
+gnome-voice-control package. Remove the current installation with
+"make uninstall", then call configure like this:
+
+./configure --prefix=/usr --libexecdir=/usr/lib/gnome-voice-control
+--mandir=\$${prefix}/share/man --infodir=/usr/share/info
+--with-sphinx2=/usr
+
+Then do the usual "make", "make install". Hope it works :).
+
+--
+Best regards,
+Sa?a Bodiro?a
+
+From nshmyrev at yandex.ru  Sat May  3 08:05:03 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Sat, 03 May 2008 10:05:03 +0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481BC38E.8060308@terra.cl>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl>
+Message-ID: <1209794703.7536.4.camel@gnome.local>
+
+
+? ???, 02/05/2008 ? 21:44 -0400, Mauricio Henriquez ?????:
+> Hi..more allmost succesfully update..
+> 
+> finally the applet can be added to the panel, I move the 
+> GNOME_VoiceControlApplet_Factory.server from 
+> /usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+> able to find the applet, now when I try to start the voice-control the 
+> applet crash, how can I know what is the problem?? any log file?, I only 
+> see a red dot with a "x" in the applet icon and then the 
+> crash-applet.window asking me if I want to reload the applet..I check my 
+> mix setting and seems to be ok, at least I able to record my voice with 
+> audacity and other audio softwares..
+> I need to make some sphinx training or some other config?, how can I be 
+> sure that sphinx or other things are working correctly?
+
+The current trunk is partly broken, partially due major reworks in
+pocketsphinx. If you want to try the software, please use released
+versions.
+
+I just fixed the crash in trunk, but it will work only with
+accessibility _disabled_. I hope this problem will be fixed soon.
+
+
+
+
+From mhenriquezs at terra.cl  Mon May  5 22:11:04 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Mon, 05 May 2008 16:11:04 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <1209794703.7536.4.camel@gnome.local>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+Message-ID: <481F69D8.8020906@terra.cl>
+
+Nickolay V. Shmyrev wrote:
+> ? ???, 02/05/2008 ? 21:44 -0400, Mauricio Henriquez ?????:
+>   
+>> Hi..more allmost succesfully update..
+>>
+>> finally the applet can be added to the panel, I move the 
+>> GNOME_VoiceControlApplet_Factory.server from 
+>> /usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+>> able to find the applet, now when I try to start the voice-control the 
+>> applet crash, how can I know what is the problem?? any log file?, I only 
+>> see a red dot with a "x" in the applet icon and then the 
+>> crash-applet.window asking me if I want to reload the applet..I check my 
+>> mix setting and seems to be ok, at least I able to record my voice with 
+>> audacity and other audio softwares..
+>> I need to make some sphinx training or some other config?, how can I be 
+>> sure that sphinx or other things are working correctly?
+>>     
+>
+> The current trunk is partly broken, partially due major reworks in
+> pocketsphinx. If you want to try the software, please use released
+> versions.
+>   
+with sphinxbase-0.3 the libsphinxbase.* libraries are not create (I 
+don't know way), so then of course the pockesphinx 0.4.1 don't 
+compile..Then I try with sphinxbase from svn trunk and pocketsphinx 
+0.4.1 but don't compile either...
+> I just fixed the crash in trunk, but it will work only with
+> accessibility _disabled_. I hope this problem will be fixed soon.
+>   
+the only way to compile ALL fine is with svn trunk sources of 
+sphinxbase, pocketsphinx and gnome-voice-control, I disable the 
+accessibility and the applet load, but when i try to start the voice 
+control the applet crash (at botton the full bug report if is of any 
+help...I really want to try this and then cooperate with the spanish 
+support, I even have Windows Viavoice gold working with Wine like a 
+charm in my linux machine!!!
+
+in advance thanks...
+
+Mauricio
+
+bug repport:
+System: Linux 2.6.24.3-34.fc8 #1 SMP Wed Mar 12 18:17:20 EDT 2008 i686
+X Vendor: The X.Org Foundation
+X Vendor Release: 10300000
+Selinux: No
+Accessibility: Disabled
+GTK+ Theme: Nodoka
+Icon Theme: Fedora
+
+Memory status: size: 123203584 vsize: 123203584 resident: 15593472 
+share: 11583488 rss: 15593472 rss_rlim: 4294967295
+CPU usage: start_time: 1210017626 rtime: 66 utime: 37 stime: 29 cutime:0 
+cstime: 0 timeout: 0 it_real_value: 0 frequency: 100
+
+Backtrace was generated from '/usr/libexec/voice_control_applet'
+
+Using host libthread_db library "/lib/libthread_db.so.1".
+[Thread debugging using libthread_db enabled]
+[New Thread -1208842480 (LWP 5131)]
+[New Thread -1282417776 (LWP 5227)]
+[New Thread -1271927920 (LWP 5226)]
+[New Thread -1257854064 (LWP 5225)]
+[New Thread -1245262960 (LWP 5223)]
+[New Thread -1232671856 (LWP 5222)]
+0x00110402 in __kernel_vsyscall ()
+#0  0x00110402 in __kernel_vsyscall ()
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+#2  0x071e0623 in ?? () from /lib/libglib-2.0.so.0
+#3  0x071e0999 in g_main_loop_run () from /lib/libglib-2.0.so.0
+#4  0x00590813 in bonobo_main () from /usr/lib/libbonobo-2.so.0
+#5  0x0058ea79 in bonobo_generic_factory_main_timeout ()
+   from /usr/lib/libbonobo-2.so.0
+#6  0x0058eb03 in bonobo_generic_factory_main ()
+   from /usr/lib/libbonobo-2.so.0
+#7  0x002d9101 in panel_applet_factory_main_closure ()
+   from /usr/lib/libpanel-applet-2.so.0
+#8  0x002d91e5 in panel_applet_factory_main ()
+   from /usr/lib/libpanel-applet-2.so.0
+#9  0x0804d378 in main (argc=3, argv=0xbf8c8034) at voice-control.c:572
+
+Thread 6 (Thread -1232671856 (LWP 5222)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x006e8822 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#3  0x006dd6e4 in pa_mainloop_poll () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#4  0x006de7c3 in pa_mainloop_iterate () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#5  0x006de864 in pa_mainloop_run () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#6  0x006e8723 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#7  0x00702d1e in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#8  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#9  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 5 (Thread -1245262960 (LWP 5223)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x006e8822 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#3  0x006dd6e4 in pa_mainloop_poll () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#4  0x006de7c3 in pa_mainloop_iterate () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#5  0x006de864 in pa_mainloop_run () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#6  0x006e8723 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#7  0x00702d1e in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#8  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#9  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 4 (Thread -1257854064 (LWP 5225)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x0055e6b6 in ?? () from /usr/lib/gstreamer-0.10/libgstalsa.so
+No symbol table info available.
+#3  0x004bfeb6 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#4  0x07202788 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#5  0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#6  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#7  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 3 (Thread -1271927920 (LWP 5226)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x06e67814 in snd_pcm_wait_nocheck () from /lib/libasound.so.2
+No symbol table info available.
+#3  0x06e679ff in snd_pcm_wait () from /lib/libasound.so.2
+No symbol table info available.
+#4  0x06e67b38 in snd_pcm_read_areas () from /lib/libasound.so.2
+No symbol table info available.
+#5  0x06ea8261 in ?? () from /lib/libasound.so.2
+No symbol table info available.
+#6  0x06e61b35 in snd_pcm_readi () from /lib/libasound.so.2
+No symbol table info available.
+#7  0x00564f2f in ?? () from /usr/lib/gstreamer-0.10/libgstalsa.so
+No symbol table info available.
+#8  0x0062d6d3 in ?? () from /usr/lib/libgstaudio-0.10.so.0
+No symbol table info available.
+#9  0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#10 0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#11 0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 2 (Thread -1282417776 (LWP 5227)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00dbb47b in waitpid () from /lib/libpthread.so.0
+No symbol table info available.
+#2  0x0720ef47 in g_spawn_sync () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#3  0x0720f24c in g_spawn_command_line_sync () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#4  0x00404350 in ?? () from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#5  0x00404659 in ?? () from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#6  0x00404b73 in 
+google_breakpad::ExceptionHandler::InternalWriteMinidump ()
+   from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#7  0x0040508e in google_breakpad::ExceptionHandler::HandleException ()
+   from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#8  <signal handler called>
+No symbol table info available.
+#9  feat_array_free (feat=0x0) at feat.c:586
+No locals.
+#10 0x001c1663 in acmod_free (acmod=0xb4501b08) at acmod.c:269
+No locals.
+#11 0x001c1bbc in acmod_init (config=0xb4501690, lmath=0xb4501a80, fe=0x0,
+    fcb=0x0) at acmod.c:256
+    acmod = (acmod_t *) 0xb4501b08
+#12 0x001e09e8 in ps_reinit (ps=0xb45019e8, config=0xb4501690)
+    at pocketsphinx.c:139
+    fsgfile = <value optimized out>
+    lmfile = <value optimized out>
+    lmctl = <value optimized out>
+    gn = <value optimized out>
+#13 0x001e0c2e in ps_init (config=0xb4501690) at pocketsphinx.c:194
+    ps = (ps_decoder_t *) 0xb45019e8
+#14 0x0804c1c9 in gst_sphinx_sink_render (asink=0x8c08028, buffer=0x8bc1d60)
+    at gstsphinxsink.c:85
+    sphinxsink = (GstSphinxSink *) 0x8c08028
+#15 0x00517e33 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#16 0x005195c5 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#17 0x00519c09 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#18 0x0051a22e in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#19 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#20 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#21 0x0049720a in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#22 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#23 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#24 0x0049720a in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#25 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#26 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#27 0x00522d01 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#28 0x004bfeb6 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#29 0x07202788 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#30 0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#31 0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#32 0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 1 (Thread -1208842480 (LWP 5131)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x071e0623 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#3  0x071e0999 in g_main_loop_run () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#4  0x00590813 in bonobo_main () from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#5  0x0058ea79 in bonobo_generic_factory_main_timeout ()
+   from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#6  0x0058eb03 in bonobo_generic_factory_main ()
+   from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#7  0x002d9101 in panel_applet_factory_main_closure ()
+   from /usr/lib/libpanel-applet-2.so.0
+No symbol table info available.
+#8  0x002d91e5 in panel_applet_factory_main ()
+   from /usr/lib/libpanel-applet-2.so.0
+No symbol table info available.
+#9  0x0804d378 in main (argc=3, argv=0xbf8c8034) at voice-control.c:572
+    program = (GnomeProgram *) 0x8b84858
+    retval = <value optimized out>
+#0  0x00110402 in __kernel_vsyscall ()
+The program is running.  Quit anyway (and detach it)? (y or n) [answered 
+Y; input not from terminal]
+
+
+----------- .xsession-errors (96 sec old) ---------------------
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2852,unix/unix:/tmp/.ICE-unix/2852
+ALSA lib control.c:909:(snd_ctl_open_noupdate) Invalid CTL front:0
+ALSA lib control.c:909:(snd_ctl_open_noupdate) Invalid CTL front:0
+11
+Error: permissions error in pam_timestamp_check
+could not attach to desktop process
+** Message: failed to load session from /root/.nautilus/saved-session-0U6E8T
+--------------------------------------------------
+
+
+>
+>   
+
+
+
+From nshmyrev at yandex.ru  Mon May  5 22:20:23 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Tue, 06 May 2008 00:20:23 +0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481F69D8.8020906@terra.cl>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<481F69D8.8020906@terra.cl>
+Message-ID: <1210018823.8164.2.camel@gnome.local>
+
+
+? ???, 05/05/2008 ? 16:11 -0400, Mauricio Henriquez ?????:
+> Nickolay V. Shmyrev wrote:
+> > ? ???, 02/05/2008 ? 21:44 -0400, Mauricio Henriquez ?????:
+> >   
+> >> Hi..more allmost succesfully update..
+> >>
+> >> finally the applet can be added to the panel, I move the 
+> >> GNOME_VoiceControlApplet_Factory.server from 
+> >> /usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+> >> able to find the applet, now when I try to start the voice-control the 
+> >> applet crash, how can I know what is the problem?? any log file?, I only 
+> >> see a red dot with a "x" in the applet icon and then the 
+> >> crash-applet.window asking me if I want to reload the applet..I check my 
+> >> mix setting and seems to be ok, at least I able to record my voice with 
+> >> audacity and other audio softwares..
+> >> I need to make some sphinx training or some other config?, how can I be 
+> >> sure that sphinx or other things are working correctly?
+> >>     
+> >
+> > The current trunk is partly broken, partially due major reworks in
+> > pocketsphinx. If you want to try the software, please use released
+> > versions.
+> >   
+> with sphinxbase-0.3 the libsphinxbase.* libraries are not create (I 
+> don't know way), so then of course the pockesphinx 0.4.1 don't 
+> compile..Then I try with sphinxbase from svn trunk and pocketsphinx 
+> 0.4.1 but don't compile either...
+> > I just fixed the crash in trunk, but it will work only with
+> > accessibility _disabled_. I hope this problem will be fixed soon.
+> >   
+> the only way to compile ALL fine is with svn trunk sources of 
+> sphinxbase, pocketsphinx and gnome-voice-control, I disable the 
+> accessibility and the applet load, but when i try to start the voice 
+> control the applet crash (at botton the full bug report if is of any 
+> help...I really want to try this and then cooperate with the spanish 
+> support, I even have Windows Viavoice gold working with Wine like a 
+> charm in my linux machine!!!
+
+Ok, let's continue with svn trunk, are you sure you are using latest
+one?
+
+Please remove applet from the panel, run it from terminal
+(/usr/local/libexec/voice_control_applet). It must lock then add it to
+the panel again. Start recognition, it should dump you a log. Please
+provide this log as well.
+
+Also you can find me on irc #cmusphinx channel on freenode.net if you
+need some hlep.
+
+
+
+
+From mhenriquezs at terra.cl  Tue May  6 03:55:41 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Mon, 05 May 2008 21:55:41 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <1210018823.8164.2.camel@gnome.local>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<481F69D8.8020906@terra.cl> <1210018823.8164.2.camel@gnome.local>
+Message-ID: <481FBA9D.3010708@terra.cl>
+
+Thanks Nickolay...
+
+Nickolay V. Shmyrev wrote:
+> ? ???, 05/05/2008 ? 16:11 -0400, Mauricio Henriquez ?????:
+>   
+>> Nickolay V. Shmyrev wrote:
+>>     
+>>> ? ???, 02/05/2008 ? 21:44 -0400, Mauricio Henriquez ?????:
+>>>   
+>>>       
+>>>> Hi..more allmost succesfully update..
+>>>>
+>>>> finally the applet can be added to the panel, I move the 
+>>>> GNOME_VoiceControlApplet_Factory.server from 
+>>>> /usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+>>>> able to find the applet, now when I try to start the voice-control the 
+>>>> applet crash, how can I know what is the problem?? any log file?, I only 
+>>>> see a red dot with a "x" in the applet icon and then the 
+>>>> crash-applet.window asking me if I want to reload the applet..I check my 
+>>>> mix setting and seems to be ok, at least I able to record my voice with 
+>>>> audacity and other audio softwares..
+>>>> I need to make some sphinx training or some other config?, how can I be 
+>>>> sure that sphinx or other things are working correctly?
+>>>>     
+>>>>         
+>>> The current trunk is partly broken, partially due major reworks in
+>>> pocketsphinx. If you want to try the software, please use released
+>>> versions.
+>>>   
+>>>       
+>> with sphinxbase-0.3 the libsphinxbase.* libraries are not create (I 
+>> don't know way), so then of course the pockesphinx 0.4.1 don't 
+>> compile..Then I try with sphinxbase from svn trunk and pocketsphinx 
+>> 0.4.1 but don't compile either...
+>>     
+>>> I just fixed the crash in trunk, but it will work only with
+>>> accessibility _disabled_. I hope this problem will be fixed soon.
+>>>   
+>>>       
+>> the only way to compile ALL fine is with svn trunk sources of 
+>> sphinxbase, pocketsphinx and gnome-voice-control, I disable the 
+>> accessibility and the applet load, but when i try to start the voice 
+>> control the applet crash (at botton the full bug report if is of any 
+>> help...I really want to try this and then cooperate with the spanish 
+>> support, I even have Windows Viavoice gold working with Wine like a 
+>> charm in my linux machine!!!
+>>     
+>
+> Ok, let's continue with svn trunk, are you sure you are using latest
+> one?
+>   
+Yap:
+*gnome-voice-control At revision 187
+sphinxbase At revision 8221.
+pocketsphinx At revision 8221*
+
+> Please remove applet from the panel, run it from terminal
+> (/usr/local/libexec/voice_control_applet). It must lock then add it to
+> the panel again. Start recognition, it should dump you a log. Please
+> provide this log as well.
+>
+>   
+more weird, if I try to run the applet from terminal, nothing happend!!! 
+:-S , no error, no output and no applet loaded, nothing..I also try with 
+a diferent account beside root...so no log with this approach...The "bug 
+repport" from when the applet crash (added with right click on panel...) 
+at the botton of the mail...
+> Also you can find me on irc #cmusphinx channel on freenode.net if you
+> need some hlep.
+>
+>   
+Ok thanks, I goint to try to find you tomorrow ...
+
+
+Cheers,
+
+Mauricio
+
+bug repport...:
+
+System: Linux 2.6.24.3-34.fc8 #1 SMP Wed Mar 12 18:17:20 EDT 2008 i686
+X Vendor: The X.Org Foundation
+X Vendor Release: 10300000
+Selinux: No
+Accessibility: Disabled
+GTK+ Theme: Nodoka
+Icon Theme: Fedora
+
+Memory status: size: 123203584 vsize: 123203584 resident: 15593472 
+share: 11583488 rss: 15593472 rss_rlim: 4294967295
+CPU usage: start_time: 1210017626 rtime: 66 utime: 37 stime: 29 cutime:0 
+cstime: 0 timeout: 0 it_real_value: 0 frequency: 100
+
+Backtrace was generated from '/usr/libexec/voice_control_applet'
+
+Using host libthread_db library "/lib/libthread_db.so.1".
+[Thread debugging using libthread_db enabled]
+[New Thread -1208842480 (LWP 5131)]
+[New Thread -1282417776 (LWP 5227)]
+[New Thread -1271927920 (LWP 5226)]
+[New Thread -1257854064 (LWP 5225)]
+[New Thread -1245262960 (LWP 5223)]
+[New Thread -1232671856 (LWP 5222)]
+0x00110402 in __kernel_vsyscall ()
+#0  0x00110402 in __kernel_vsyscall ()
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+#2  0x071e0623 in ?? () from /lib/libglib-2.0.so.0
+#3  0x071e0999 in g_main_loop_run () from /lib/libglib-2.0.so.0
+#4  0x00590813 in bonobo_main () from /usr/lib/libbonobo-2.so.0
+#5  0x0058ea79 in bonobo_generic_factory_main_timeout ()
+   from /usr/lib/libbonobo-2.so.0
+#6  0x0058eb03 in bonobo_generic_factory_main ()
+   from /usr/lib/libbonobo-2.so.0
+#7  0x002d9101 in panel_applet_factory_main_closure ()
+   from /usr/lib/libpanel-applet-2.so.0
+#8  0x002d91e5 in panel_applet_factory_main ()
+   from /usr/lib/libpanel-applet-2.so.0
+#9  0x0804d378 in main (argc=3, argv=0xbf8c8034) at voice-control.c:572
+
+Thread 6 (Thread -1232671856 (LWP 5222)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x006e8822 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#3  0x006dd6e4 in pa_mainloop_poll () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#4  0x006de7c3 in pa_mainloop_iterate () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#5  0x006de864 in pa_mainloop_run () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#6  0x006e8723 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#7  0x00702d1e in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#8  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#9  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 5 (Thread -1245262960 (LWP 5223)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x006e8822 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#3  0x006dd6e4 in pa_mainloop_poll () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#4  0x006de7c3 in pa_mainloop_iterate () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#5  0x006de864 in pa_mainloop_run () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#6  0x006e8723 in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#7  0x00702d1e in ?? () from /usr/lib/libpulse.so.0
+No symbol table info available.
+#8  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#9  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 4 (Thread -1257854064 (LWP 5225)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x0055e6b6 in ?? () from /usr/lib/gstreamer-0.10/libgstalsa.so
+No symbol table info available.
+#3  0x004bfeb6 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#4  0x07202788 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#5  0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#6  0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#7  0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 3 (Thread -1271927920 (LWP 5226)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x06e67814 in snd_pcm_wait_nocheck () from /lib/libasound.so.2
+No symbol table info available.
+#3  0x06e679ff in snd_pcm_wait () from /lib/libasound.so.2
+No symbol table info available.
+#4  0x06e67b38 in snd_pcm_read_areas () from /lib/libasound.so.2
+No symbol table info available.
+#5  0x06ea8261 in ?? () from /lib/libasound.so.2
+No symbol table info available.
+#6  0x06e61b35 in snd_pcm_readi () from /lib/libasound.so.2
+No symbol table info available.
+#7  0x00564f2f in ?? () from /usr/lib/gstreamer-0.10/libgstalsa.so
+No symbol table info available.
+#8  0x0062d6d3 in ?? () from /usr/lib/libgstaudio-0.10.so.0
+No symbol table info available.
+#9  0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#10 0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#11 0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 2 (Thread -1282417776 (LWP 5227)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00dbb47b in waitpid () from /lib/libpthread.so.0
+No symbol table info available.
+#2  0x0720ef47 in g_spawn_sync () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#3  0x0720f24c in g_spawn_command_line_sync () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#4  0x00404350 in ?? () from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#5  0x00404659 in ?? () from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#6  0x00404b73 in 
+google_breakpad::ExceptionHandler::InternalWriteMinidump ()
+   from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#7  0x0040508e in google_breakpad::ExceptionHandler::HandleException ()
+   from /usr/lib/gtk-2.0/modules/libgnomebreakpad.so
+No symbol table info available.
+#8  <signal handler called>
+No symbol table info available.
+#9  feat_array_free (feat=0x0) at feat.c:586
+No locals.
+#10 0x001c1663 in acmod_free (acmod=0xb4501b08) at acmod.c:269
+No locals.
+#11 0x001c1bbc in acmod_init (config=0xb4501690, lmath=0xb4501a80, fe=0x0,
+    fcb=0x0) at acmod.c:256
+    acmod = (acmod_t *) 0xb4501b08
+#12 0x001e09e8 in ps_reinit (ps=0xb45019e8, config=0xb4501690)
+    at pocketsphinx.c:139
+    fsgfile = <value optimized out>
+    lmfile = <value optimized out>
+    lmctl = <value optimized out>
+    gn = <value optimized out>
+#13 0x001e0c2e in ps_init (config=0xb4501690) at pocketsphinx.c:194
+    ps = (ps_decoder_t *) 0xb45019e8
+#14 0x0804c1c9 in gst_sphinx_sink_render (asink=0x8c08028, buffer=0x8bc1d60)
+    at gstsphinxsink.c:85
+    sphinxsink = (GstSphinxSink *) 0x8c08028
+#15 0x00517e33 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#16 0x005195c5 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#17 0x00519c09 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#18 0x0051a22e in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#19 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#20 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#21 0x0049720a in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#22 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#23 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#24 0x0049720a in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#25 0x004a5cd9 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#26 0x004a6392 in gst_pad_push () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#27 0x00522d01 in ?? () from /usr/lib/libgstbase-0.10.so.0
+No symbol table info available.
+#28 0x004bfeb6 in ?? () from /usr/lib/libgstreamer-0.10.so.0
+No symbol table info available.
+#29 0x07202788 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#30 0x07200bff in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#31 0x00db350b in start_thread () from /lib/libpthread.so.0
+No symbol table info available.
+#32 0x00cf4b2e in clone () from /lib/libc.so.6
+No symbol table info available.
+
+Thread 1 (Thread -1208842480 (LWP 5131)):
+#0  0x00110402 in __kernel_vsyscall ()
+No symbol table info available.
+#1  0x00ceaac3 in poll () from /lib/libc.so.6
+No symbol table info available.
+#2  0x071e0623 in ?? () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#3  0x071e0999 in g_main_loop_run () from /lib/libglib-2.0.so.0
+No symbol table info available.
+#4  0x00590813 in bonobo_main () from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#5  0x0058ea79 in bonobo_generic_factory_main_timeout ()
+   from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#6  0x0058eb03 in bonobo_generic_factory_main ()
+   from /usr/lib/libbonobo-2.so.0
+No symbol table info available.
+#7  0x002d9101 in panel_applet_factory_main_closure ()
+   from /usr/lib/libpanel-applet-2.so.0
+No symbol table info available.
+#8  0x002d91e5 in panel_applet_factory_main ()
+   from /usr/lib/libpanel-applet-2.so.0
+No symbol table info available.
+#9  0x0804d378 in main (argc=3, argv=0xbf8c8034) at voice-control.c:572
+    program = (GnomeProgram *) 0x8b84858
+    retval = <value optimized out>
+#0  0x00110402 in __kernel_vsyscall ()
+The program is running.  Quit anyway (and detach it)? (y or n) [answered 
+Y; input not from terminal]
+
+
+----------- .xsession-errors (96 sec old) ---------------------
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2852,unix/unix:/tmp/.ICE-unix/2852
+ALSA lib control.c:909:(snd_ctl_open_noupdate) Invalid CTL front:0
+ALSA lib control.c:909:(snd_ctl_open_noupdate) Invalid CTL front:0
+11
+Error: permissions error in pam_timestamp_check
+could not attach to desktop process
+** Message: failed to load session from /root/.nautilus/saved-session-0U6E8T
+--------------------------------------------------
+
+
+From nshmyrev at yandex.ru  Tue May  6 05:44:49 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Tue, 06 May 2008 07:44:49 +0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <481FBA9D.3010708@terra.cl>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<481F69D8.8020906@terra.cl> <1210018823.8164.2.camel@gnome.local>
+	<481FBA9D.3010708@terra.cl>
+Message-ID: <1210045490.8164.8.camel@gnome.local>
+
+
+> 
+> > Please remove applet from the panel, run it from terminal
+> > (/usr/local/libexec/voice_control_applet). It must lock then add it
+> to
+> > the panel again. Start recognition, it should dump you a log. Please
+> > provide this log as well.
+> >   
+> more weird, if I try to run the applet from terminal, nothing happend!!! 
+> :-S , no error, no output and no applet loaded, nothing.
+
+Read more carefully. It must lock, then add it to the panel by hand. It
+will be added automatically. Check this for details as well:
+
+http://www.davyd.id.au/articles/debugging-gnome-applets.shtml
+
+
+
+
+From mhenriquezs at terra.cl  Tue May  6 15:37:32 2008
+From: mhenriquezs at terra.cl (Mauricio Henriquez)
+Date: Tue, 06 May 2008 09:37:32 -0400
+Subject: [Festlang-gvc] help to build gnome-voice-control and sphinx
+In-Reply-To: <1210045490.8164.8.camel@gnome.local>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<481F69D8.8020906@terra.cl> <1210018823.8164.2.camel@gnome.local>
+	<481FBA9D.3010708@terra.cl> <1210045490.8164.8.camel@gnome.local>
+Message-ID: <48205F1C.1040802@terra.cl>
+
+Nickolay V. Shmyrev wrote:
+>>> Please remove applet from the panel, run it from terminal
+>>> (/usr/local/libexec/voice_control_applet). It must lock then add it
+>>>       
+>> to
+>>     
+>>> the panel again. Start recognition, it should dump you a log. Please
+>>> provide this log as well.
+>>>   
+>>>       
+>> more weird, if I try to run the applet from terminal, nothing happend!!! 
+>> :-S , no error, no output and no applet loaded, nothing.
+>>     
+>
+> Read more carefully. It must lock, then add it to the panel by hand. It
+> will be added automatically. Check this for details as well:
+>
+>   
+ups, sorry, yap I read more carefully now, this is the log (I don't know 
+if the mail list allow attachment, so I added the log here):
+
+[root at portatil ~]# /usr/local/libexec/voice_control_applet
+INFO: cmd_ln.c(458): Parsing command line:
+voice-control \
+        -fwdflat no \
+        -bestpath yes \
+        -hmm /usr/local/share/pocketsphinx/model/hmm/voxforge-en \
+        -fsg /usr/local/share/gnome-voice-control/desktop-control.fsg \
+        -dict /usr/local/share/gnome-voice-control/desktop-control-en.dict
+
+Current configuration:
+[NAME]          [DEFLT]         [VALUE]
+-agc            none            none
+-agcthresh      2.0             2.000000e+00
+-alpha          0.97            9.700000e-01
+-beam           1e-48           1.000000e-48
+-bestpath       yes             yes
+-bestpathlw     9.5             9.500000e+00
+-cep2spec       no              no
+-ceplen         13              13
+-cmn            current         current
+-cmninit        8.0             8.0
+-compallsen     no              no
+-dict                           
+/usr/local/share/gnome-voice-control/desktop-control-en.dict
+-dither         no              no
+-doublebw       no              no
+-ds             1               1
+-fdict
+-feat           1s_c_d_dd       1s_c_d_dd
+-featparams
+-fillprob       1e-8            1.000000e-08
+-frate          100             100
+-fsg                            
+/usr/local/share/gnome-voice-control/desktop-control.fsg
+-fsgusealtpron  yes             yes
+-fsgusefiller   yes             yes
+-fwdflat        yes             no
+-fwdflatbeam    1e-64           1.000000e-64
+-fwdflatefwid   4               4
+-fwdflatlw      8.5             8.500000e+00
+-fwdflatsfwin   25              25
+-fwdflatwbeam   7e-29           7.000000e-29
+-fwdtree        yes             yes
+-hmm                            
+/usr/local/share/pocketsphinx/model/hmm/voxforge-en
+-input_endian   little          little
+-jsgf
+-kdmaxbbi       -1              -1
+-kdmaxdepth     0               0
+-kdtree
+-latsize        5000            5000
+-lda
+-ldadim         0               0
+-lifter         0               0
+-lm
+-lmctlfn
+-lmname         default         default
+-logbase        1.0001          1.000100e+00
+-logspec        no              no
+-lowerf         133.33334       1.333333e+02
+-lpbeam         1e-40           1.000000e-40
+-lponlybeam     7e-29           7.000000e-29
+-lw             6.5             6.500000e+00
+-maxhistpf      100             100
+-maxhmmpf       -1              -1
+-maxnewoov      20              20
+-maxwpf         -1              -1
+-mdef
+-mean
+-mixw
+-mixwfloor      0.0000001       1.000000e-07
+-mmap           yes             yes
+-ncep           13              13
+-nfft           512             512
+-nfilt          40              40
+-nwpen          1.0             1.000000e+00
+-pbeam          1e-48           1.000000e-48
+-pip            1.0             1.000000e+00
+-remove_dc      no              no
+-round_filters  yes             yes
+-samprate       16000           1.600000e+04
+-seed           -1              -1
+-sendump
+-silprob        0.005           5.000000e-03
+-smoothspec     no              no
+-spec2cep       no              no
+-tmat
+-tmatfloor      0.0001          1.000000e-04
+-topn           4               4
+-toprule
+-transform      legacy          legacy
+-unit_area      yes             yes
+-upperf         6855.4976       6.855498e+03
+-usewdphones    no              no
+-uw             1.0             1.000000e+00
+-var
+-varfloor       0.0001          1.000000e-04
+-varnorm        no              no
+-verbose        no              no
+-warp_params
+-warp_type      inverse_linear  inverse_linear
+-wbeam          7e-29           7.000000e-29
+-wip            0.65            6.500000e-01
+-wlen           0.025625        2.562500e-02
+
+ERROR: "acmod.c", line 82: Must specify -mdef or -hmm
+
+ 
+> http://www.davyd.id.au/articles/debugging-gnome-applets.shtml
+>
+>
+>   
+
+
+
+From aecostas at gmail.com  Sat May 31 21:54:54 2008
+From: aecostas at gmail.com (=?ISO-8859-1?Q?Andr=E9s_Est=E9vez_Costas?=)
+Date: Sat, 31 May 2008 21:54:54 +0200
+Subject: [Festlang-gvc] gvc word recognition system
+Message-ID: <901a4c140805311254n33109835x9918ac44dd90b5fc@mail.gmail.com>
+
+Hi all,
+
+I've been thinking on gvc word recognition system (well, in sphinx) and I
+have a proposal:
+
+What's about getting phonetic transcription of each word automatically
+instead of reading it from a text file?
+
+That is, when a window gets focus, we get its items by means of
+accessibility description. So, maybe, we can get phonetic transcription of
+each item if we would can find a way to translate it into phonemes. Then,
+sphinx could compare with these phonemes (that have been generated on the
+fly). The main goal of this method is the flexibility: a big list with all
+possible words isn't necessary now, and any accessible application could be
+use from gvc, regardless of the words that it uses.
+
+I don't know how difficult is this method in english, but, in Spanish, for
+instance, there is a direct translation from letters  (or groups of letters)
+to phonemes.
+
+Moreover, this is a common feature in mobile phones, where you can say the
+name of your contacts. I don't believe it store a big list with all possible
+names...
+
+Regards
+
+-- 
+Andr?s Est?vez Costas
+http://ultimastecnoloxias.blogspot.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080531/b935789d/attachment.html>
+

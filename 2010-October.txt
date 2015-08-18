@@ -1,0 +1,51 @@
+From digbigbrotherjenson at gmail.com  Sat Oct  2 14:45:59 2010
+From: digbigbrotherjenson at gmail.com (Dig Big Brother Jenson)
+Date: Sat, 2 Oct 2010 14:45:59 +0200
+Subject: [Festlang-gvc] GVC in Spanish with Julius
+In-Reply-To: <4FDB591A08444564970C5D498D0A5217@Latitude>
+References: <4FDB591A08444564970C5D498D0A5217@Latitude>
+Message-ID: <AANLkTinxWnkQB7-yOtmT_jXRDWZbHR4DwotzUuG=vxxN@mail.gmail.com>
+
+Hello,
+
+I'm no longer maintaining the code for Gnome Voice Control, proceed at free
+will!
+
+Kind Regards,
+Bart Janssen.
+
+
+2010/9/3 Guillermo P?rez <g.perez at indisys.es>
+
+>  Hello,
+>
+> We are working with Gnome Voice Control, trying to make it work in Spanish.
+> We are now building the Spanish acoustic model, but in the mean time we are
+> also making general changes to the system, including:
+>
+> - Refactoring of "voice_control" to make the main process independent of
+> the ASR and language chosen
+> - Refactoring of "voice_control" and "spi_listener" to make the main
+> process independent of gstream
+> - Implementation of a general ASR interface (independent of the particular
+> engine)
+> - Integration of Julius as an alternative to Sphinx
+> - Expanding the set of commands
+> - Some minor changes in the Spanish translation of the commands
+>
+> We would like to make our changes available as part of the Gnome Voice
+> Control project. How should we proceed?
+>
+> Kind regards,
+> Guillermo
+>
+> _______________________________________________
+> Festlang-gvc mailing list
+> Festlang-gvc at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20101002/0355a186/attachment.html>
+

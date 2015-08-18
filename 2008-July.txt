@@ -1,0 +1,314 @@
+From buhochileno at gmail.com  Wed Jul 23 04:58:20 2008
+From: buhochileno at gmail.com (buhochileno at gmail.com)
+Date: Tue, 22 Jul 2008 22:58:20 -0400
+Subject: [Festlang-gvc] spanish file licence info---
+In-Reply-To: <1209794703.7536.4.camel@gnome.local>
+References: <481B9639.7000103@terra.cl>
+	<481BB42E.6050204@terra.cl>	<481BC38E.8060308@terra.cl>
+	<1209794703.7536.4.camel@gnome.local>
+Message-ID: <48869E4C.3030201@gmail.com>
+
+Hi Nickolay:
+
+At voxForge we want to use some prompts from 
+http://www.speech.cs.cmu.edu/sphinx/models/hub4spanish_itesm/ to improve 
+spanish support, but we can't find any licence information (Ken at 
+voxforge nee some licence clarification to be sure that is ok to use 
+those files and content), also we don't get any response from Dr. 
+Nolazco, that is a page related to cmu sphinx, may be you know something 
+about licence of that?.
+Specially licence info about the train.corpus_tst25pct_c file that you 
+recomend me for the submission applet prompts.
+
+Thanks
+
+Mauricio
+
+
+
+From nshmyrev at yandex.ru  Mon Jul 28 10:25:23 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Mon, 28 Jul 2008 12:25:23 +0400
+Subject: [Festlang-gvc] spanish file licence info---
+In-Reply-To: <48869E4C.3030201@gmail.com>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<48869E4C.3030201@gmail.com>
+Message-ID: <1217233523.29943.56.camel@localhost.localdomain>
+
+
+? ???, 22/07/2008 ? 22:58 -0400, buhochileno at gmail.com ?????:
+> Hi Nickolay:
+> 
+> At voxForge we want to use some prompts from 
+> http://www.speech.cs.cmu.edu/sphinx/models/hub4spanish_itesm/ to improve 
+> spanish support, but we can't find any licence information (Ken at 
+> voxforge nee some licence clarification to be sure that is ok to use 
+> those files and content), also we don't get any response from Dr. 
+> Nolazco, that is a page related to cmu sphinx, may be you know something 
+> about licence of that?.
+> Specially licence info about the train.corpus_tst25pct_c file that you 
+> recomend me for the submission applet prompts.
+
+
+Hi
+
+To be honest I don't know what should you do with the prompts. I think
+you can just drop them and start recording texts from public sources.
+It's not so important actually.
+
+
+
+
+From robinvankleeff at gmail.com  Mon Jul 28 11:35:22 2008
+From: robinvankleeff at gmail.com (Robin van Kleeff)
+Date: Mon, 28 Jul 2008 11:35:22 +0200
+Subject: [Festlang-gvc] spanish file licence info---
+In-Reply-To: <1217233523.29943.56.camel@localhost.localdomain>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>
+	<48869E4C.3030201@gmail.com>
+	<1217233523.29943.56.camel@localhost.localdomain>
+Message-ID: <a50ea2b0807280235q3ec14c31h129599a07d81943@mail.gmail.com>
+
+I agree with nsh.  Just make your own collection of prompts.  Make
+sure you use stuff that no one will claim the copyright to.
+
+For example
+
+use sayings (I am sure you can find lists of Spanish sayings on the
+Internet, and most of them will be quite old, and practically no one
+will know who used it for the first time).
+
+Copy and paste single sentences from weather forecasts.  They contain
+very simple sentences like: tomorrow will be a sunny day... the
+maximum temperature for tomorrow will be twenty degrees.
+
+Or use old (out of copyright) books, however avoid using tongue
+twisters (sentences that are really hard to pronounce) and words that
+no one uses anymore.
+
+I'm sure you can think of many more examples like those
+
+Robin
+
+
+On Mon, Jul 28, 2008 at 10:25 AM, Nickolay V. Shmyrev
+<nshmyrev at yandex.ru> wrote:
+>
+> ? ???, 22/07/2008 ? 22:58 -0400, buhochileno at gmail.com ?????:
+>> Hi Nickolay:
+>>
+>> At voxForge we want to use some prompts from
+>> http://www.speech.cs.cmu.edu/sphinx/models/hub4spanish_itesm/ to improve
+>> spanish support, but we can't find any licence information (Ken at
+>> voxforge nee some licence clarification to be sure that is ok to use
+>> those files and content), also we don't get any response from Dr.
+>> Nolazco, that is a page related to cmu sphinx, may be you know something
+>> about licence of that?.
+>> Specially licence info about the train.corpus_tst25pct_c file that you
+>> recomend me for the submission applet prompts.
+>
+>
+> Hi
+>
+> To be honest I don't know what should you do with the prompts. I think
+> you can just drop them and start recording texts from public sources.
+> It's not so important actually.
+>
+>
+> _______________________________________________
+> Festlang-gvc mailing list
+> Festlang-gvc at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>
+
+From buhochileno at gmail.com  Mon Jul 28 15:14:46 2008
+From: buhochileno at gmail.com (buhochileno at gmail.com)
+Date: Mon, 28 Jul 2008 09:14:46 -0400
+Subject: [Festlang-gvc] spanish file licence info---
+In-Reply-To: <a50ea2b0807280235q3ec14c31h129599a07d81943@mail.gmail.com>
+References: <481B9639.7000103@terra.cl> <481BB42E.6050204@terra.cl>	
+	<481BC38E.8060308@terra.cl> <1209794703.7536.4.camel@gnome.local>	
+	<48869E4C.3030201@gmail.com>	
+	<1217233523.29943.56.camel@localhost.localdomain>
+	<a50ea2b0807280235q3ec14c31h129599a07d81943@mail.gmail.com>
+Message-ID: <488DC646.60509@gmail.com>
+
+Perfect, thanks..
+
+Robin van Kleeff wrote:
+> I agree with nsh.  Just make your own collection of prompts.  Make
+> sure you use stuff that no one will claim the copyright to.
+>
+> For example
+>
+> use sayings (I am sure you can find lists of Spanish sayings on the
+> Internet, and most of them will be quite old, and practically no one
+> will know who used it for the first time).
+>
+> Copy and paste single sentences from weather forecasts.  They contain
+> very simple sentences like: tomorrow will be a sunny day... the
+> maximum temperature for tomorrow will be twenty degrees.
+>
+> Or use old (out of copyright) books, however avoid using tongue
+> twisters (sentences that are really hard to pronounce) and words that
+> no one uses anymore.
+>
+> I'm sure you can think of many more examples like those
+>
+> Robin
+>
+>
+> On Mon, Jul 28, 2008 at 10:25 AM, Nickolay V. Shmyrev
+> <nshmyrev at yandex.ru> wrote:
+>   
+>> ? ???, 22/07/2008 ? 22:58 -0400, buhochileno at gmail.com ?????:
+>>     
+>>> Hi Nickolay:
+>>>
+>>> At voxForge we want to use some prompts from
+>>> http://www.speech.cs.cmu.edu/sphinx/models/hub4spanish_itesm/ to improve
+>>> spanish support, but we can't find any licence information (Ken at
+>>> voxforge nee some licence clarification to be sure that is ok to use
+>>> those files and content), also we don't get any response from Dr.
+>>> Nolazco, that is a page related to cmu sphinx, may be you know something
+>>> about licence of that?.
+>>> Specially licence info about the train.corpus_tst25pct_c file that you
+>>> recomend me for the submission applet prompts.
+>>>       
+>> Hi
+>>
+>> To be honest I don't know what should you do with the prompts. I think
+>> you can just drop them and start recording texts from public sources.
+>> It's not so important actually.
+>>
+>>
+>> _______________________________________________
+>> Festlang-gvc mailing list
+>> Festlang-gvc at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/festlang-gvc
+>>
+>>     
+
+
+
+From imorgillo at sanniolug.org  Thu Jul 31 11:23:29 2008
+From: imorgillo at sanniolug.org (Ivan Morgillo)
+Date: Thu, 31 Jul 2008 11:23:29 +0200
+Subject: [Festlang-gvc] gstsphinxsink error during compiling
+Message-ID: <48918491.10207@sanniolug.org>
+
+Hi, I'm trying to compile gnome-voice-control-0.3.
+I got an error:
+
+In file included from gstsphinxsink.c:33:
+gstsphinxsink.h:32:17: error: fbs.h: No such file or directory
+gstsphinxsink.c:321: error: expected declaration specifiers or ?...?
+before ?s2_fsg_trans_t?
+gstsphinxsink.c: In function ?gst_sphinx_construct_trans_list?:
+gstsphinxsink.c:325: error: ?s2_fsg_trans_t? undeclared (first use in
+this function)
+gstsphinxsink.c:325: error: (Each undeclared identifier is reported only
+once
+gstsphinxsink.c:325: error: for each function it appears in.)
+gstsphinxsink.c:325: error: ?transitions? undeclared (first use in this
+function)
+gstsphinxsink.c:337: error: expected expression before ?)? token
+gstsphinxsink.c:360: error: ?trans_list? undeclared (first use in this
+function)
+gstsphinxsink.c: In function ?gst_sphinx_sink_set_fsg?:
+gstsphinxsink.c:371: error: ?s2_fsg_t? undeclared (first use in this
+function)
+gstsphinxsink.c:371: error: expected ?;? before ?fsg?
+gstsphinxsink.c:372: error: ?s2_fsg_trans_t? undeclared (first use in
+this function)
+gstsphinxsink.c:372: error: ?trans_list? undeclared (first use in this
+function)
+gstsphinxsink.c:374: error: ?fsg? undeclared (first use in this function)
+gstsphinxsink.c:375: error: too many arguments to function
+?gst_sphinx_construct_trans_list?
+make[2]: *** [gstsphinxsink.o] Error 1
+make[2]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3'
+make: *** [all] Error 2
+
+I'm using Ubuntu Hardy. I tried .deb, but it's buggy. I installed all
+dependencies, libraries... Any help?
+Thanks,
+Ivan
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: imorgillo.vcf
+Type: text/x-vcard
+Size: 602 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.vcf>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: OpenPGP digital signature
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.pgp>
+
+From nshmyrev at yandex.ru  Thu Jul 31 20:54:28 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Thu, 31 Jul 2008 22:54:28 +0400
+Subject: [Festlang-gvc] gstsphinxsink error during compiling
+In-Reply-To: <48918491.10207@sanniolug.org>
+References: <48918491.10207@sanniolug.org>
+Message-ID: <1217530468.3119.8.camel@localhost.localdomain>
+
+
+? ???, 31/07/2008 ? 11:23 +0200, Ivan Morgillo ?????:
+> Hi, I'm trying to compile gnome-voice-control-0.3.
+> I got an error:
+> 
+> In file included from gstsphinxsink.c:33:
+> gstsphinxsink.h:32:17: error: fbs.h: No such file or directory
+> gstsphinxsink.c:321: error: expected declaration specifiers or ?...?
+> before ?s2_fsg_trans_t?
+> gstsphinxsink.c: In function ?gst_sphinx_construct_trans_list?:
+> gstsphinxsink.c:325: error: ?s2_fsg_trans_t? undeclared (first use in
+> this function)
+> gstsphinxsink.c:325: error: (Each undeclared identifier is reported only
+> once
+> gstsphinxsink.c:325: error: for each function it appears in.)
+> gstsphinxsink.c:325: error: ?transitions? undeclared (first use in this
+> function)
+> gstsphinxsink.c:337: error: expected expression before ?)? token
+> gstsphinxsink.c:360: error: ?trans_list? undeclared (first use in this
+> function)
+> gstsphinxsink.c: In function ?gst_sphinx_sink_set_fsg?:
+> gstsphinxsink.c:371: error: ?s2_fsg_t? undeclared (first use in this
+> function)
+> gstsphinxsink.c:371: error: expected ?;? before ?fsg?
+> gstsphinxsink.c:372: error: ?s2_fsg_trans_t? undeclared (first use in
+> this function)
+> gstsphinxsink.c:372: error: ?trans_list? undeclared (first use in this
+> function)
+> gstsphinxsink.c:374: error: ?fsg? undeclared (first use in this function)
+> gstsphinxsink.c:375: error: too many arguments to function
+> ?gst_sphinx_construct_trans_list?
+> make[2]: *** [gstsphinxsink.o] Error 1
+> make[2]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3/src'
+> make[1]: *** [all-recursive] Error 1
+> make[1]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3'
+> make: *** [all] Error 2
+> 
+> I'm using Ubuntu Hardy. I tried .deb, but it's buggy. I installed all
+> dependencies, libraries... Any help?
+> Thanks,
+> Ivan
+To answer more properly, you need to checkout lastest development
+version from trunk for pocketsphinx and sphinxbase 0.5. Unfortunately we
+have no release yet.
+
+And, this developement version is buggy to, don't enable ally with it.
+But it should work better on 64 bit.
+
+
+
+

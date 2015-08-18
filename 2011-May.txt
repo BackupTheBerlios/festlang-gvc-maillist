@@ -1,0 +1,70 @@
+From joanied at gnome.org  Sat May 21 21:36:13 2011
+From: joanied at gnome.org (Joanmarie Diggs)
+Date: Sat, 21 May 2011 21:36:13 +0200
+Subject: [Festlang-gvc] Project status?
+Message-ID: <1306006594.3603.64.camel@gumby>
+
+Hi folks.
+
+We (GNOME Accessibility Team) are attempting to ascertain the current
+status and future plans of relevant modules, including GNOME Voice
+Control.
+
+In particular:
+
+* At the moment, GNOME Voice Control seems to depend upon CSPI which
+  was deprecated. Are there plans to move to libatspi [1] so that
+  GNOME Voice Control can be used in GNOME 3?
+
+* Is there a project/team roadmap?
+
+* Are there plans to move the code to git.gnome.org?
+
+Thank you in advance for any information you can provide us! Take care.
+--joanie
+
+[1] http://developer.gnome.org/libatspi/
+
+
+
+From nshmyrev at nexiwave.com  Sat May 21 22:10:58 2011
+From: nshmyrev at nexiwave.com (Nickolay V. Shmyrev)
+Date: Sat, 21 May 2011 23:10:58 +0300
+Subject: [Festlang-gvc] Project status?
+In-Reply-To: <1306006594.3603.64.camel@gumby>
+References: <1306006594.3603.64.camel@gumby>
+Message-ID: <1306008658.2135.0.camel@localhost.localdomain>
+
+? ???, 21/05/2011 ? 21:36 +0200, Joanmarie Diggs ?????:
+> Hi folks.
+
+Hello Joanmarie
+
+> We (GNOME Accessibility Team) are attempting to ascertain the current
+> status and future plans of relevant modules, including GNOME Voice
+> Control.
+> 
+> In particular:
+> 
+> * At the moment, GNOME Voice Control seems to depend upon CSPI which
+>   was deprecated. Are there plans to move to libatspi [1] so that
+>   GNOME Voice Control can be used in GNOME 3?
+
+No
+
+> * Is there a project/team roadmap?
+
+No
+
+> * Are there plans to move the code to git.gnome.org?
+
+No
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110521/cc9581ac/attachment.pgp>
+

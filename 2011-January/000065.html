@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] GVC - Segmentation fault when configuring with own	model
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%20own%0A%09model&In-Reply-To=%3CAANLkTinug1dxyyiggfTvQ%3DOAh6Nf6AyUmw4Awo2GqksP%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000066.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] GVC - Segmentation fault when configuring with own	model</H1>
+    <B>Hanitha Gnanathesigar</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%20own%0A%09model&In-Reply-To=%3CAANLkTinug1dxyyiggfTvQ%3DOAh6Nf6AyUmw4Awo2GqksP%40mail.gmail.com%3E"
+       TITLE="[Festlang-gvc] GVC - Segmentation fault when configuring with own	model">ghanitha at gmail.com
+       </A><BR>
+    <I>Sun Jan  2 13:08:01 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000066.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi ,
+
+I created my own models for tamil language using spinxtrain.
+Was able to successfully decode with pocketsphinx.
+
+I wanted to add it to gvc . These are the steps i did.
+1. Generated kdtrees using following comand
+./kdtree  -outfn kdtrees -meanfn means -varfn variances -threshold 0.2
+-depth 8
+
+2. Generated the mdef bmp file.
+pocketsphinx_mdef_convert build/voxforge/mdef2 build/voxforge/mdef
+
+3. Placed my model directory in the following path
+/home/hani/build/pocketsphinx/model/hmm/voxforge-ta
+
+4. Created my lm folder in following path
+/home/hani/build/pocketsphinx/model/lm/voxforge-ta
+copied my dmp , dictionay files to it.
+
+5. Also copied my dictionay file to following location
+/home/hani/build/gnome-voice-control/lang/desktop-control-ta.dict
+
+6. I change the gstsphinxsink.c as follows
+ result = g_strdup_printf (&quot;voice-control &quot;
+    &quot;-fwdflat no &quot;
+    &quot;-bestpath yes &quot;
+    &quot;-dictcase yes &quot;
+    &quot;-hmm &quot; POCKETSPHINX_PREFIX &quot;/share/pocketsphinx/model/hmm/voxforge-ta &quot;
+
+    &quot;-fsg &quot; GNOMEDATADIR &quot;/gnome-voice-control/desktop-control.fsg &quot;
+    &quot;-dict &quot; GNOMEDATADIR &quot;/gnome-voice-control/desktop-control-ta.dict &quot;);
+
+When 'Start Control' i get segmentation fault. Error looks like coming when
+try to call ps_update_fsgset (sink-&gt;decoder) in gst_sphinx_sink_set_fsg
+procedure.
+
+Where am i going wrong ?
+
+Thanks,
+Hani
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110102/e759336e/attachment.html">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110102/e759336e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000066.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

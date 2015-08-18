@@ -1,0 +1,115 @@
+From prahal at yahoo.com  Fri Dec 19 04:00:58 2008
+From: prahal at yahoo.com (Alban Browaeys)
+Date: Fri, 19 Dec 2008 04:00:58 +0100
+Subject: [Festlang-gvc] [PATCH] Add window mode to ease debugging
+Message-ID: <494B0E6A.60901@yahoo.com>
+
+This patch add a --window  switch to run the applet from the console 
+(the applet_factory around voice_control_applet_factory is not needed 
+.... just tell me if you want this added layer removed and I ll resubmit 
+a new patch).
+
+I hope that with this ease of debugging I ll be able to send fixes for 
+the segfaults I encounter .
+One of those I have worked around by adding:
+
+        if (GST_SPHINX_SINK(voice_control->sink)->ad.initialized ) {
+
+around the code in voice-control.c :
+static void
+voice_control_ui_changed (ControlSpiListener *listener, gpointer data)
+
+because on my setup ps_init is too slow and the decoder_init from 
+gstsphinxsink.c is not run before the ui is updated (or so I think it is 
+what s happening right now, feel free to correct me). This crash happens 
+in gst_sphinx_sink_set_fsg/gst_spinx_construct_fsg called from 
+voice_control_ui_changed because sink->decoder is null  for the first ui 
+change.
+
+Still I now get a crash again in ui_changed but this time while 
+ps_update_fsgs is called. I hope to be able to fix this one but it is 
+not as obvious as the one I fixed with the previous change.
+
+I cannot wait for a version that understand french .-)
+
+Cheers
+Alban
+
+
+PS: I had it working without a flow a few days ago (before Xorg 1.6 
+upgrade which removed xevie support and a recompile of at-spi with 
+--disable-xevie because otherwise it fails to start the registry without 
+xevie behing there.)
+I believe that most of the issue I encounter are due to at-spi without 
+xevie behing slower by order of magnitude than with xevie. Still as it 
+could not hurt to fix those crashes and though it seems somebody have 
+stepped up to bring back xevie in xorg this is not done yet and xorg 1.6 
+(1.5.99) is currently in ubuntu jaunty.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: gnome-voice-control_addwindowmode3.diff
+Type: text/x-patch
+Size: 3026 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20081219/dd72932f/attachment.bin>
+
+From nshmyrev at yandex.ru  Fri Dec 19 04:10:41 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Fri, 19 Dec 2008 06:10:41 +0300
+Subject: [Festlang-gvc] [PATCH] Add window mode to ease debugging
+In-Reply-To: <494B0E6A.60901@yahoo.com>
+References: <494B0E6A.60901@yahoo.com>
+Message-ID: <1229656241.10308.3.camel@localhost.localdomain>
+
+? ???, 19/12/2008 ? 04:00 +0100, Alban Browaeys ?????:
+> This patch add a --window  switch to run the applet from the console 
+> (the applet_factory around voice_control_applet_factory is not needed 
+> .... just tell me if you want this added layer removed and I ll resubmit 
+> a new patch).
+
+Hey Alban, great work. Create yourself an account on berlios and I'll
+happily add you to the developers! You'll be able to commit your patch
+yourself.
+
+> I hope that with this ease of debugging I ll be able to send fixes for 
+> the segfaults I encounter .
+> One of those I have worked around by adding:
+> 
+>         if (GST_SPHINX_SINK(voice_control->sink)->ad.initialized ) {
+> 
+> around the code in voice-control.c :
+> static void
+> voice_control_ui_changed (ControlSpiListener *listener, gpointer data)
+> 
+> because on my setup ps_init is too slow and the decoder_init from 
+> gstsphinxsink.c is not run before the ui is updated (or so I think it is 
+> what s happening right now, feel free to correct me). This crash happens 
+> in gst_sphinx_sink_set_fsg/gst_spinx_construct_fsg called from 
+> voice_control_ui_changed because sink->decoder is null  for the first ui 
+> change.
+
+Nice catch! Actually we can create a callback and start UI lookup only
+when decoder is initialized.
+
+> Still I now get a crash again in ui_changed but this time while 
+> ps_update_fsgs is called. I hope to be able to fix this one but it is 
+> not as obvious as the one I fixed with the previous change.
+> 
+> I cannot wait for a version that understand french .-)
+> 
+
+Well, it's possible right now, you just need to translate it to french
+with fr.po and create a dictionary. Also you need to package existing
+acoustic model from sphinx downloads in a special way so it will be
+handled by the decoder.
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20081219/e2cde3e0/attachment.pgp>
+

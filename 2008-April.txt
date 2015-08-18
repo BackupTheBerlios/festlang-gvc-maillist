@@ -1,0 +1,82 @@
+From opax.gm at gmail.com  Mon Apr  7 18:28:55 2008
+From: opax.gm at gmail.com (Opax Amazigh)
+Date: Mon, 7 Apr 2008 18:28:55 +0200
+Subject: [Festlang-gvc] fsg files
+Message-ID: <a82d97ad0804070928i766fdd3ek11182a43e83e2d89@mail.gmail.com>
+
+Hello!
+
+I think GVC is a great project... which can find great applications.
+
+so i'd like to understand it.
+
+I have compiled GVC 0.2 and add new command but i realized that some words
+are not in the dictionnary.
+So I added them but there this file
+
+desktop-control.fsg
+
+how does it work? it for the sentences?
+
+could some help me to understand it please..
+
+thanks!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080407/1ecdd08c/attachment.html>
+
+From nshmyrev at yandex.ru  Mon Apr  7 21:13:18 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Mon, 07 Apr 2008 23:13:18 +0400
+Subject: [Festlang-gvc] fsg files
+In-Reply-To: <a82d97ad0804070928i766fdd3ek11182a43e83e2d89@mail.gmail.com>
+References: <a82d97ad0804070928i766fdd3ek11182a43e83e2d89@mail.gmail.com>
+Message-ID: <1207595598.2093.5.camel@localhost.localdomain>
+
+
+? ???, 07/04/2008 ? 18:28 +0200, Opax Amazigh ?????:
+> Hello!
+> 
+> I think GVC is a great project... which can find great applications.
+> 
+> so i'd like to understand it.
+> 
+> I have compiled GVC 0.2 and add new command but i realized that some
+> words are not in the dictionnary. 
+> So I added them but there this file
+> 
+> desktop-control.fsg
+> 
+> how does it work? it for the sentences?
+> 
+> could some help me to understand it please..
+> 
+> thanks!
+
+Hi Opax, welcome to gvc.
+
+First of all please checkout/download the latest version -
+gnome-voice-control-0.3. It has some important modifications.
+
+Next, about fsg. As you see it describes the grammar recognizer
+understands. But this grammar is not actually contained in
+desktop-control.fsg. In latest version this file is just empty. The real
+grammar is built on the fly by gst_sphinx_sink_set_fsg function. Words
+from commands and UI elements are included there from ally introspection
+information.
+
+If you need to add another command, open the file action.c and add a
+command for existing action or even add a new action. Remember that the
+word you'd like to add must be in the dictionary as well.
+
+
+If you have more questions, feel free to ask or join #cmusphinx channel
+on freenode.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080407/401f105c/attachment.pgp>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%0A%20own%20model&In-Reply-To=%3CAANLkTinUZT53q%3D2uzhy1CARW_UvDcLSfpicHBUArEBRR%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000068.html">
+   <LINK REL="Next"  HREF="000070.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model</H1>
+    <B>Hanitha Gnanathesigar</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%0A%20own%20model&In-Reply-To=%3CAANLkTinUZT53q%3D2uzhy1CARW_UvDcLSfpicHBUArEBRR%40mail.gmail.com%3E"
+       TITLE="[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model">ghanitha at gmail.com
+       </A><BR>
+    <I>Tue Jan  4 18:33:15 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000068.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+        <LI>Next message: <A HREF="000070.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Nickolay.
+
+1. sorry, i could n't figure out what u meant by output of the applet.
+I'm debugging by locking the voice-control-applet in the terminal and then
+adding to the panel.
+
+2. Initially there was an error abt a duplicate entry in the
+desktop-control-en-dict.
+Yesterday i got segmentation fault when try to call ps_update_fsgset
+(sink-&gt;decoder) in gst_sphinx_sink_set_fsg procedure.
+today when i redo the dictionary editing the error is fixed. Now It is
+listening. Most of the time as soon as it executes the command, i get
+segmentation fault. Looks like coming in the same point.
+Please find my log entry attached in eng_log file.
+Though log file is for wsj1 models from pocketsphinc 0.5.1, behaviour was
+same for en_US models from pocketsphinx0.6.1
+
+3. when i use the tamil model it gave segmentation fault as before. Error
+looks like coming when try to call ps_update_fsgset (sink-&gt;decoder) in
+gst_sphinx_sink_set_fsg procedure.
+Please find my log entry attached in ta_log file
+also tamil hmm and lmm folders attached.
+
+Thank you.
+Hani
+
+
+
+
+
+
+
+
+On 2 January 2011 17:36, Nickolay V. Shmyrev &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">nshmyrev at yandex.ru</A>&gt; wrote:
+
+&gt;<i> &#1042; &#1042;&#1089;&#1082;, 02/01/2011 &#1074; 14:12 -0500, Hanitha Gnanathesigar &#1087;&#1080;&#1096;&#1077;&#1090;:
+</I>&gt;<i> &gt; Thanks a lot for your prompt response.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; i installed pocketsphinx 0.6.1 and sphinxbase 0.6.1.
+</I>&gt;<i> &gt; But now i'm getting the same error at the same line for default
+</I>&gt;<i> &gt; english models as well.
+</I>&gt;<i> &gt; using gvc 0.4.
+</I>&gt;<i>
+</I>&gt;<i> Good, now you probably want to read the output of the applet which
+</I>&gt;<i> contains the description of the error.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.html">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: eng_log
+Type: application/octet-stream
+Size: 9317 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.obj">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.obj</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ta_log
+Type: application/octet-stream
+Size: 13681 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment-0001.obj">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment-0001.obj</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge-ta.tar.gz
+Type: application/x-gzip
+Size: 415213 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.bin">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: voxforge-ta_lm.tar.gz
+Type: application/x-gzip
+Size: 1627 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment-0001.bin">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110104/2a1073a8/attachment-0001.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000068.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+	<LI>Next message: <A HREF="000070.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#69">[ date ]</a>
+              <a href="thread.html#69">[ thread ]</a>
+              <a href="subject.html#69">[ subject ]</a>
+              <a href="author.html#69">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

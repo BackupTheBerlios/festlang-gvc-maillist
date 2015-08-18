@@ -1,0 +1,58 @@
+From g.perez at indisys.es  Wed Mar 16 10:02:59 2011
+From: g.perez at indisys.es (=?iso-8859-1?Q?Guillermo_P=E9rez?=)
+Date: Wed, 16 Mar 2011 10:02:59 +0100
+Subject: [Festlang-gvc] Test results and commit
+Message-ID: <984E77B4AEB947139EF6E5CCED6BCF04@Latitude>
+
+Hello Nickolay,
+
+As discussed in previous conversations, you can find attached some test results we did with our acoustic and language model. The results have been obtained for Spanish with Julius engine. In the pdf file are included both the individual results and the ROC curve, with and overall result of 85%.
+
+Regarding GVC, we are finally going to commit our changes to the svn repository. Do you think we should first make a tag for the 0.4 version?
+
+Regards,
+Guillermo
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110316/c75a1cd3/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ConfidenceResults.pdf
+Type: application/pdf
+Size: 87433 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110316/c75a1cd3/attachment.pdf>
+
+From nshmyrev at yandex.ru  Wed Mar 16 22:25:02 2011
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Thu, 17 Mar 2011 00:25:02 +0300
+Subject: [Festlang-gvc] Test results and commit
+In-Reply-To: <984E77B4AEB947139EF6E5CCED6BCF04@Latitude>
+References: <984E77B4AEB947139EF6E5CCED6BCF04@Latitude>
+Message-ID: <1300310702.6438.0.camel@localhost.localdomain>
+
+? ???, 16/03/2011 ? 10:02 +0100, Guillermo P?rez ?????:
+> Hello Nickolay,
+>  
+> As discussed in previous conversations, you can find attached some
+> test results we did with our acoustic and language model. The results
+> have been obtained for Spanish with Julius engine. In the pdf file
+> are included both the individual results and the ROC curve, with and
+> overall result of 85%.
+> Regarding GVC, we are finally going to commit our changes to the svn
+> repository. 
+
+Hello Guillermo, that's a great news. Thanks for the test results, they
+are very interesting
+
+> Do you think we should first make a tag for the 0.4 version?
+
+Up to you
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110317/2b545256/attachment.pgp>
+

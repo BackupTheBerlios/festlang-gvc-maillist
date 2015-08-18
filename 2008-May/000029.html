@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] help to build gnome-voice-control and sphinx
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20help%20to%20build%20gnome-voice-control%20and%20sphinx&In-Reply-To=%3C481BC38E.8060308%40terra.cl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000028.html">
+   <LINK REL="Next"  HREF="000031.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] help to build gnome-voice-control and sphinx</H1>
+    <B>Mauricio Henriquez</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20help%20to%20build%20gnome-voice-control%20and%20sphinx&In-Reply-To=%3C481BC38E.8060308%40terra.cl%3E"
+       TITLE="[Festlang-gvc] help to build gnome-voice-control and sphinx">mhenriquezs at terra.cl
+       </A><BR>
+    <I>Sat May  3 03:44:46 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000028.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+        <LI>Next message: <A HREF="000031.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi..more allmost succesfully update..
+
+finally the applet can be added to the panel, I move the 
+GNOME_VoiceControlApplet_Factory.server from 
+/usr/local/lib/bonobo/servers to /usr/lib/bonobo/servers and bonobo was 
+able to find the applet, now when I try to start the voice-control the 
+applet crash, how can I know what is the problem?? any log file?, I only 
+see a red dot with a &quot;x&quot; in the applet icon and then the 
+crash-applet.window asking me if I want to reload the applet..I check my 
+mix setting and seems to be ok, at least I able to record my voice with 
+audacity and other audio softwares..
+I need to make some sphinx training or some other config?, how can I be 
+sure that sphinx or other things are working correctly?
+
+Thanks
+
+Mauricio
+
+
+
+Mauricio Henriquez wrote:
+
+&gt;<i> &gt; Hi Guys:
+</I>&gt;<i> &gt; ...some updates from the fedora front..all thing compiled fine 
+</I>&gt;<i> &gt; (sphinxbase, pocketsphinx and gnome-voice-control) all from las svn 
+</I>&gt;<i> &gt; sources...my only problem right now is how to start gnome-voice-control 
+</I>&gt;<i> &gt;  :-)  . I enable the &quot;Assistive technologies...&quot; from fedora menu, and the 
+</I>&gt;<i> &gt; right click on the panel to try to add the gnome-voice-control applet, 
+</I>&gt;<i> &gt; but don't show me a &quot;Miscellaneous&quot; entry...any idea how to start the 
+</I>&gt;<i> &gt; applet manually? or figure out if the correct gnome-voice-control files 
+</I>&gt;<i> &gt; are in the correct places?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; thanks..
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Mauricio
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Mauricio Henriquez wrote:
+</I>&gt;<i> &gt;   
+</I>&gt;<i>   
+</I>&gt;&gt;<i> &gt;&gt; Hi guys:
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; My name is Mauricio  and I write you from Chili, this is my first post 
+</I>&gt;&gt;<i> &gt;&gt; to the list, so Hi to ALL!! and congratulation for such a great job 
+</I>&gt;&gt;<i> &gt;&gt; developing a speech recognition system for linux, that is something that 
+</I>&gt;&gt;<i> &gt;&gt; is really missing for this OS..
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I have experience compiling stuff in linux but I have some basic 
+</I>&gt;&gt;<i> &gt;&gt; compilation problems with gnome-voice-control and the necesary sphinx 
+</I>&gt;&gt;<i> &gt;&gt; stuff, so if you can give me some general guide line I would really 
+</I>&gt;&gt;<i> &gt;&gt; apreciate..
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; My first problem is trying to compile shpinxbase, with the svn source I 
+</I>&gt;&gt;<i> &gt;&gt; get this with the &quot;configure&quot; script:
+</I>&gt;&gt;<i> &gt;&gt; config.status: error: cannot find input file: Makefile.in and of course 
+</I>&gt;&gt;<i> &gt;&gt; I can do nothing more from there...
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; With sphinxbase 0.3 release the autogen.sg script seems to run ok, but 
+</I>&gt;&gt;<i> &gt;&gt; then &quot;make&quot; give me a:
+</I>&gt;&gt;<i> &gt;&gt; Makefile.am: required file `./NEWS' not found
+</I>&gt;&gt;<i> &gt;&gt; Makefile.am: required file `./README' not found
+</I>&gt;&gt;<i> &gt;&gt; Makefile.am: required file `./AUTHORS' not found
+</I>&gt;&gt;<i> &gt;&gt; make: *** [Makefile.in] Error 1
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I suppose that are stupid problems but are really keep me far from try 
+</I>&gt;&gt;<i> &gt;&gt; gnome-voice.control and I think that you may be allready figure out how 
+</I>&gt;&gt;<i> &gt;&gt; to solve this stuff..
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Thanks in advance for any help or sugestion..
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Mauricio
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; P.S: My system is a Fedora 8 kernel  2.6.24 with gcc 4.1.2-33, I really 
+</I>&gt;&gt;<i> &gt;&gt; whant to contribute to this project to help with the spanish support...
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;&gt;<i> &gt;&gt; Festlang-gvc mailing list
+</I>&gt;&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">Festlang-gvc at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">https://lists.berlios.de/mailman/listinfo/festlang-gvc</A>
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt;   
+</I>&gt;&gt;<i> &gt;&gt;     
+</I>&gt;&gt;<i>     
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Festlang-gvc mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">Festlang-gvc at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">https://lists.berlios.de/mailman/listinfo/festlang-gvc</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;   
+</I>&gt;<i>   
+</I>
+_______________________________________________
+Festlang-gvc mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">Festlang-gvc at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">https://lists.berlios.de/mailman/listinfo/festlang-gvc</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000028.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+	<LI>Next message: <A HREF="000031.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Bug%20in%20g-v-c%200.2%20in%20Ubuntu&In-Reply-To=%3C706cf3130708222058s909ffafye8a412599e8f88dc%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000019.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu</H1>
+    <B>Sa&#353;a Bodiro&#382;a</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Bug%20in%20g-v-c%200.2%20in%20Ubuntu&In-Reply-To=%3C706cf3130708222058s909ffafye8a412599e8f88dc%40mail.gmail.com%3E"
+       TITLE="[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu">jazzva at gmail.com
+       </A><BR>
+    <I>Thu Aug 23 05:58:37 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000019.html">[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu
+</A></li>
+        <LI>Next message: <A HREF="000022.html">[Festlang-gvc] gnome-voice-control using standalone gst-sphinx	plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 8/20/07, Nickolay V. Shmyrev &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">nshmyrev at yandex.ru</A>&gt; wrote:
+&gt;<i> Hi Sa&#353;a, thanks for the report but it's really hard to say where is the
+</I>&gt;<i> problem, can you just do the following:
+</I>&gt;<i>
+</I>&gt;<i> 1. Start applet binary from terminal
+</I>&gt;<i> 2. Try to add it to panel
+</I>&gt;<i> 3. When it crash look into terminal messages, is there something useful?
+</I>&gt;<i>
+</I>&gt;<i> This article can be useful too:
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.davyd.id.au/articles/debugging-gnome-applets.shtml">http://www.davyd.id.au/articles/debugging-gnome-applets.shtml</A>
+</I>
+Hello Nickolay,
+
+I found what was the problem. The program installs it's binary in
+libexec=$(prefix)/libexec, which is a directory that is not standard
+(at least in Ubuntu). I had to change it, so I passed the
+libexexec=/usr/lib/gnome-voice-control to configure. But there are two
+places where the $(prefix)/libexec is used instead of $(libexec),
+which breaks the program if $(libexec) is passed .
+In data/Makefile.am, line 8:
+APPLET_LOCATION=$(prefix)/libexec/voice_control_applet
+
+In data/Makefile.in, line 222:
+APPLET_LOCATION=$(prefix)/libexec/voice_control_applet
+
+Changing the &quot;$(prefix)/libexec&quot; to &quot;$(libexec)&quot; fixes this problem.
+Now the applet crashes when it starts listening, but that's another
+bug :)... Does anyone know the build-deps that can be used instead
+gnome-devel?
+
+Best regards,
+Sa&#353;a
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000019.html">[Festlang-gvc] Bug in g-v-c 0.2 in Ubuntu
+</A></li>
+	<LI>Next message: <A HREF="000022.html">[Festlang-gvc] gnome-voice-control using standalone gst-sphinx	plugins
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

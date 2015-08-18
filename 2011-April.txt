@@ -1,0 +1,134 @@
+From ghanitha at gmail.com  Tue Apr 12 18:29:40 2011
+From: ghanitha at gmail.com (Hanitha Gnanathesigar)
+Date: Tue, 12 Apr 2011 21:59:40 +0530
+Subject: [Festlang-gvc] Re : GVC - Segmentation fault when configuring
+ with own model
+In-Reply-To: <AANLkTimB01w0jAazdiGZF+5u0EH=M9xwj+e=V=R4Jip_@mail.gmail.com>
+References: <AANLkTinug1dxyyiggfTvQ=OAh6Nf6AyUmw4Awo2GqksP@mail.gmail.com>
+	<1293982806.5060.0.camel@localhost.localdomain>
+	<AANLkTinrHcb5uHO=O+RXEUcxoxn=G99SD_4dk2ix0Fr7@mail.gmail.com>
+	<1294007802.5060.2.camel@localhost.localdomain>
+	<AANLkTimwa9fsqSFwP+tAgEHST_CBh_N6PnsmQpMhXodO@mail.gmail.com>
+	<AANLkTinUZT53q=2uzhy1CARW_UvDcLSfpicHBUArEBRR@mail.gmail.com>
+	<1294315784.2145.54.camel@localhost.localdomain>
+	<AANLkTinYGEu18VpXVofd8fYHEb-EDnkrpswbFDKw_QKn@mail.gmail.com>
+	<1294531339.2223.1.camel@localhost.localdomain>
+	<AANLkTimB01w0jAazdiGZF+5u0EH=M9xwj+e=V=R4Jip_@mail.gmail.com>
+Message-ID: <BANLkTikX0_ursQHAnEQkP13HdDv12GpqCw@mail.gmail.com>
+
+Hi ,
+
+Thanks a lot for your support through out. Finally, i'm done with it. To GVC
+i have added tamil models trained using SphinxTrain and also have added
+speech output using festival, with the aim of  assisting the visually
+impaired. Following is my blog on gnomeSpeak. I have added some screen casts
+to it.
+http://gnomespeak.blogspot.com/2011/03/gnomespeak-lets-both-talk.html
+I appreciate your feedback on this. This would help me to evaluate my work
+and improve.
+
+Thank you.
+
+Best Regards,
+Hanitha
+
+
+On 10 January 2011 23:17, Hanitha Gnanathesigar <ghanitha at gmail.com> wrote:
+
+> Thanks a lot for the quick fix Nickolay.
+> I did n't know the commands declared are matched with dictionary and
+> checked. Now it is listening to my tamil models :)
+> Still not recognising my tamil commands. Will come back to you if i failed
+> to figure out the new issue ;)
+>
+> Regards,
+> Hani
+>
+>
+>
+> On 8 January 2011 19:02, Nickolay V. Shmyrev <nshmyrev at nexiwave.com>wrote:
+>
+>> ? ???, 08/01/2011 ? 13:09 -0500, Hanitha Gnanathesigar ?????:
+>> > Thanks for your information Nickolay.
+>> >
+>> > I managed to debug using gdb and log files are attached.
+>> >
+>> > 1. english_log.txt :
+>> > dict file : gvc desktop-control-en.dict
+>> > model : /pocketsphinx/model/hmm/en_US/hub4wsj_sc_8k
+>> > sigsegv error comes for run browser command, It executed many other
+>> > commands successfully
+>> >
+>> > 2.eng_log_with_cmu07a.txt
+>> > dict file : /pocketsphinx/model/lm/en_US/cmu07a.dic
+>> > model : /pocketsphinx/model/hmm/en_US/hub4wsj_sc_8k
+>> > sigsegv error comes for 'Start Control' action
+>> >
+>> > 3. tamil_log.txt (Own model and dict file)
+>> > dict file : /pocketsphinx/model/hmm/voxforge-ta
+>> > model : pocketsphinx 0.6.1 -> voxforge-ta
+>> > sigsegv error comes for 'Start Control' action
+>> >
+>> > P.S: english model directories renamed to voxforge-en , dictionary
+>> > files to desktop-control-en.dict and used.
+>>
+>> Ok, there was a minor bug in GVC which caused this silence, it actually
+>> had to print you a error about missing word. This bug is now fixed in
+>> GVC trunk, please checkout latest version and try it. It has some
+>> features which can help you with debugging, for example --window option
+>> to start an application in a window instead of applet.
+>>
+>>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110412/16fcdb2a/attachment.html>
+
+From nshmyrev at nexiwave.com  Tue Apr 12 23:25:49 2011
+From: nshmyrev at nexiwave.com (Nickolay V. Shmyrev)
+Date: Wed, 13 Apr 2011 01:25:49 +0400
+Subject: [Festlang-gvc] Re : GVC - Segmentation fault when configuring
+ with own model
+In-Reply-To: <BANLkTikX0_ursQHAnEQkP13HdDv12GpqCw@mail.gmail.com>
+References: <AANLkTinug1dxyyiggfTvQ=OAh6Nf6AyUmw4Awo2GqksP@mail.gmail.com>
+	<1293982806.5060.0.camel@localhost.localdomain>
+	<AANLkTinrHcb5uHO=O+RXEUcxoxn=G99SD_4dk2ix0Fr7@mail.gmail.com>
+	<1294007802.5060.2.camel@localhost.localdomain>
+	<AANLkTimwa9fsqSFwP+tAgEHST_CBh_N6PnsmQpMhXodO@mail.gmail.com>
+	<AANLkTinUZT53q=2uzhy1CARW_UvDcLSfpicHBUArEBRR@mail.gmail.com>
+	<1294315784.2145.54.camel@localhost.localdomain>
+	<AANLkTinYGEu18VpXVofd8fYHEb-EDnkrpswbFDKw_QKn@mail.gmail.com>
+	<1294531339.2223.1.camel@localhost.localdomain>
+	<AANLkTimB01w0jAazdiGZF+5u0EH=M9xwj+e=V=R4Jip_@mail.gmail.com>
+	<BANLkTikX0_ursQHAnEQkP13HdDv12GpqCw@mail.gmail.com>
+Message-ID: <1302643549.32282.15.camel@localhost.localdomain>
+
+? ???, 12/04/2011 ? 21:59 +0530, Hanitha Gnanathesigar ?????:
+> Hi ,
+> 
+> Thanks a lot for your support through out. Finally, i'm done with it.
+> To GVC i have added tamil models trained using SphinxTrain and also
+> have added speech output using festival, with the aim of  assisting
+> the visually impaired. Following is my blog on gnomeSpeak. I have
+> added some screen casts to it.
+> http://gnomespeak.blogspot.com/2011/03/gnomespeak-lets-both-talk.html
+> I appreciate your feedback on this. This would help me to evaluate my
+> work and improve.
+> 
+> Thank you.
+> 
+> Best Regards,
+> Hanitha
+
+Great news, Hanitha
+
+I'm now looking forward to see it's going even further beyond simple
+demo. It would be nice to see this project alive.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110413/57d0b0d8/attachment.pgp>
+

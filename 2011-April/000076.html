@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2011-April/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%0A%20with%20own%20model&In-Reply-To=%3CBANLkTikX0_ursQHAnEQkP13HdDv12GpqCw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000077.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model</H1>
+    <B>Hanitha Gnanathesigar</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20Re%20%3A%20GVC%20-%20Segmentation%20fault%20when%20configuring%0A%20with%20own%20model&In-Reply-To=%3CBANLkTikX0_ursQHAnEQkP13HdDv12GpqCw%40mail.gmail.com%3E"
+       TITLE="[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model">ghanitha at gmail.com
+       </A><BR>
+    <I>Tue Apr 12 18:29:40 CEST 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000077.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi ,
+
+Thanks a lot for your support through out. Finally, i'm done with it. To GVC
+i have added tamil models trained using SphinxTrain and also have added
+speech output using festival, with the aim of  assisting the visually
+impaired. Following is my blog on gnomeSpeak. I have added some screen casts
+to it.
+<A HREF="http://gnomespeak.blogspot.com/2011/03/gnomespeak-lets-both-talk.html">http://gnomespeak.blogspot.com/2011/03/gnomespeak-lets-both-talk.html</A>
+I appreciate your feedback on this. This would help me to evaluate my work
+and improve.
+
+Thank you.
+
+Best Regards,
+Hanitha
+
+
+On 10 January 2011 23:17, Hanitha Gnanathesigar &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">ghanitha at gmail.com</A>&gt; wrote:
+
+&gt;<i> Thanks a lot for the quick fix Nickolay.
+</I>&gt;<i> I did n't know the commands declared are matched with dictionary and
+</I>&gt;<i> checked. Now it is listening to my tamil models :)
+</I>&gt;<i> Still not recognising my tamil commands. Will come back to you if i failed
+</I>&gt;<i> to figure out the new issue ;)
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Hani
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On 8 January 2011 19:02, Nickolay V. Shmyrev &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">nshmyrev at nexiwave.com</A>&gt;wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> &#1042; &#1057;&#1073;&#1090;, 08/01/2011 &#1074; 13:09 -0500, Hanitha Gnanathesigar &#1087;&#1080;&#1096;&#1077;&#1090;:
+</I>&gt;&gt;<i> &gt; Thanks for your information Nickolay.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; I managed to debug using gdb and log files are attached.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 1. english_log.txt :
+</I>&gt;&gt;<i> &gt; dict file : gvc desktop-control-en.dict
+</I>&gt;&gt;<i> &gt; model : /pocketsphinx/model/hmm/en_US/hub4wsj_sc_8k
+</I>&gt;&gt;<i> &gt; sigsegv error comes for run browser command, It executed many other
+</I>&gt;&gt;<i> &gt; commands successfully
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 2.eng_log_with_cmu07a.txt
+</I>&gt;&gt;<i> &gt; dict file : /pocketsphinx/model/lm/en_US/cmu07a.dic
+</I>&gt;&gt;<i> &gt; model : /pocketsphinx/model/hmm/en_US/hub4wsj_sc_8k
+</I>&gt;&gt;<i> &gt; sigsegv error comes for 'Start Control' action
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; 3. tamil_log.txt (Own model and dict file)
+</I>&gt;&gt;<i> &gt; dict file : /pocketsphinx/model/hmm/voxforge-ta
+</I>&gt;&gt;<i> &gt; model : pocketsphinx 0.6.1 -&gt; voxforge-ta
+</I>&gt;&gt;<i> &gt; sigsegv error comes for 'Start Control' action
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt; P.S: english model directories renamed to voxforge-en , dictionary
+</I>&gt;&gt;<i> &gt; files to desktop-control-en.dict and used.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Ok, there was a minor bug in GVC which caused this silence, it actually
+</I>&gt;&gt;<i> had to print you a error about missing word. This bug is now fixed in
+</I>&gt;&gt;<i> GVC trunk, please checkout latest version and try it. It has some
+</I>&gt;&gt;<i> features which can help you with debugging, for example --window option
+</I>&gt;&gt;<i> to start an application in a window instead of applet.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110412/16fcdb2a/attachment.html">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110412/16fcdb2a/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000077.html">[Festlang-gvc] Re : GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#76">[ date ]</a>
+              <a href="thread.html#76">[ thread ]</a>
+              <a href="subject.html#76">[ subject ]</a>
+              <a href="author.html#76">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] help to build gnome-voice-control and sphinx
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20help%20to%20build%20gnome-voice-control%20and%20sphinx&In-Reply-To=%3C48205F1C.1040802%40terra.cl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000035.html">
+   <LINK REL="Next"  HREF="000030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] help to build gnome-voice-control and sphinx</H1>
+    <B>Mauricio Henriquez</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20help%20to%20build%20gnome-voice-control%20and%20sphinx&In-Reply-To=%3C48205F1C.1040802%40terra.cl%3E"
+       TITLE="[Festlang-gvc] help to build gnome-voice-control and sphinx">mhenriquezs at terra.cl
+       </A><BR>
+    <I>Tue May  6 15:37:32 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000035.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+        <LI>Next message: <A HREF="000030.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Nickolay V. Shmyrev wrote:
+&gt;&gt;&gt;<i> Please remove applet from the panel, run it from terminal
+</I>&gt;&gt;&gt;<i> (/usr/local/libexec/voice_control_applet). It must lock then add it
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> to
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> the panel again. Start recognition, it should dump you a log. Please
+</I>&gt;&gt;&gt;<i> provide this log as well.
+</I>&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> more weird, if I try to run the applet from terminal, nothing happend!!! 
+</I>&gt;&gt;<i> :-S , no error, no output and no applet loaded, nothing.
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Read more carefully. It must lock, then add it to the panel by hand. It
+</I>&gt;<i> will be added automatically. Check this for details as well:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>ups, sorry, yap I read more carefully now, this is the log (I don't know 
+if the mail list allow attachment, so I added the log here):
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">root at portatil</A> ~]# /usr/local/libexec/voice_control_applet
+INFO: cmd_ln.c(458): Parsing command line:
+voice-control \
+        -fwdflat no \
+        -bestpath yes \
+        -hmm /usr/local/share/pocketsphinx/model/hmm/voxforge-en \
+        -fsg /usr/local/share/gnome-voice-control/desktop-control.fsg \
+        -dict /usr/local/share/gnome-voice-control/desktop-control-en.dict
+
+Current configuration:
+[NAME]          [DEFLT]         [VALUE]
+-agc            none            none
+-agcthresh      2.0             2.000000e+00
+-alpha          0.97            9.700000e-01
+-beam           1e-48           1.000000e-48
+-bestpath       yes             yes
+-bestpathlw     9.5             9.500000e+00
+-cep2spec       no              no
+-ceplen         13              13
+-cmn            current         current
+-cmninit        8.0             8.0
+-compallsen     no              no
+-dict                           
+/usr/local/share/gnome-voice-control/desktop-control-en.dict
+-dither         no              no
+-doublebw       no              no
+-ds             1               1
+-fdict
+-feat           1s_c_d_dd       1s_c_d_dd
+-featparams
+-fillprob       1e-8            1.000000e-08
+-frate          100             100
+-fsg                            
+/usr/local/share/gnome-voice-control/desktop-control.fsg
+-fsgusealtpron  yes             yes
+-fsgusefiller   yes             yes
+-fwdflat        yes             no
+-fwdflatbeam    1e-64           1.000000e-64
+-fwdflatefwid   4               4
+-fwdflatlw      8.5             8.500000e+00
+-fwdflatsfwin   25              25
+-fwdflatwbeam   7e-29           7.000000e-29
+-fwdtree        yes             yes
+-hmm                            
+/usr/local/share/pocketsphinx/model/hmm/voxforge-en
+-input_endian   little          little
+-jsgf
+-kdmaxbbi       -1              -1
+-kdmaxdepth     0               0
+-kdtree
+-latsize        5000            5000
+-lda
+-ldadim         0               0
+-lifter         0               0
+-lm
+-lmctlfn
+-lmname         default         default
+-logbase        1.0001          1.000100e+00
+-logspec        no              no
+-lowerf         133.33334       1.333333e+02
+-lpbeam         1e-40           1.000000e-40
+-lponlybeam     7e-29           7.000000e-29
+-lw             6.5             6.500000e+00
+-maxhistpf      100             100
+-maxhmmpf       -1              -1
+-maxnewoov      20              20
+-maxwpf         -1              -1
+-mdef
+-mean
+-mixw
+-mixwfloor      0.0000001       1.000000e-07
+-mmap           yes             yes
+-ncep           13              13
+-nfft           512             512
+-nfilt          40              40
+-nwpen          1.0             1.000000e+00
+-pbeam          1e-48           1.000000e-48
+-pip            1.0             1.000000e+00
+-remove_dc      no              no
+-round_filters  yes             yes
+-samprate       16000           1.600000e+04
+-seed           -1              -1
+-sendump
+-silprob        0.005           5.000000e-03
+-smoothspec     no              no
+-spec2cep       no              no
+-tmat
+-tmatfloor      0.0001          1.000000e-04
+-topn           4               4
+-toprule
+-transform      legacy          legacy
+-unit_area      yes             yes
+-upperf         6855.4976       6.855498e+03
+-usewdphones    no              no
+-uw             1.0             1.000000e+00
+-var
+-varfloor       0.0001          1.000000e-04
+-varnorm        no              no
+-verbose        no              no
+-warp_params
+-warp_type      inverse_linear  inverse_linear
+-wbeam          7e-29           7.000000e-29
+-wip            0.65            6.500000e-01
+-wlen           0.025625        2.562500e-02
+
+ERROR: &quot;acmod.c&quot;, line 82: Must specify -mdef or -hmm
+
+ 
+&gt;<i> <A HREF="http://www.davyd.id.au/articles/debugging-gnome-applets.shtml">http://www.davyd.id.au/articles/debugging-gnome-applets.shtml</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000035.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+	<LI>Next message: <A HREF="000030.html">[Festlang-gvc] help to build gnome-voice-control and sphinx
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

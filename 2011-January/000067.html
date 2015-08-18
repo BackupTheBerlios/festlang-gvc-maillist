@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] GVC - Segmentation fault when configuring with	own model
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%0A%09own%20model&In-Reply-To=%3CAANLkTinrHcb5uHO%3DO%2BRXEUcxoxn%3DG99SD_4dk2ix0Fr7%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000066.html">
+   <LINK REL="Next"  HREF="000068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] GVC - Segmentation fault when configuring with	own model</H1>
+    <B>Hanitha Gnanathesigar</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20GVC%20-%20Segmentation%20fault%20when%20configuring%20with%0A%09own%20model&In-Reply-To=%3CAANLkTinrHcb5uHO%3DO%2BRXEUcxoxn%3DG99SD_4dk2ix0Fr7%40mail.gmail.com%3E"
+       TITLE="[Festlang-gvc] GVC - Segmentation fault when configuring with	own model">ghanitha at gmail.com
+       </A><BR>
+    <I>Sun Jan  2 20:12:53 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000066.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+        <LI>Next message: <A HREF="000068.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks a lot for your prompt response.
+
+i installed pocketsphinx 0.6.1 and sphinxbase 0.6.1.
+But now i'm getting the same error at the same line for default english
+models as well.
+using gvc 0.4.
+
+Thanks.
+Hani
+
+
+On 2 January 2011 10:40, Nickolay V. Shmyrev &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/festlang-gvc">nshmyrev at nexiwave.com</A>&gt; wrote:
+
+&gt;<i> &#1042; &#1042;&#1089;&#1082;, 02/01/2011 &#1074; 07:08 -0500, Hanitha Gnanathesigar &#1087;&#1080;&#1096;&#1077;&#1090;:
+</I>&gt;<i> &gt; Hi ,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I created my own models for tamil language using spinxtrain.
+</I>&gt;<i> &gt; Was able to successfully decode with pocketsphinx.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I wanted to add it to gvc . These are the steps i did.
+</I>&gt;<i> &gt; 1. Generated kdtrees using following comand
+</I>&gt;<i> &gt; ./kdtree  -outfn kdtrees -meanfn means -varfn variances -threshold 0.2
+</I>&gt;<i> &gt; -depth 8
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 2. Generated the mdef bmp file.
+</I>&gt;<i> &gt; pocketsphinx_mdef_convert build/voxforge/mdef2 build/voxforge/mdef
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 3. Placed my model directory in the following path
+</I>&gt;<i> &gt; /home/hani/build/pocketsphinx/model/hmm/voxforge-ta
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 4. Created my lm folder in following path
+</I>&gt;<i> &gt; /home/hani/build/pocketsphinx/model/lm/voxforge-ta
+</I>&gt;<i> &gt; copied my dmp , dictionay files to it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 5. Also copied my dictionay file to following location
+</I>&gt;<i> &gt; /home/hani/build/gnome-voice-control/lang/desktop-control-ta.dict
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 6. I change the gstsphinxsink.c as follows
+</I>&gt;<i> &gt;  result = g_strdup_printf (&quot;voice-control &quot;
+</I>&gt;<i> &gt;     &quot;-fwdflat no &quot;
+</I>&gt;<i> &gt;     &quot;-bestpath yes &quot;
+</I>&gt;<i> &gt;     &quot;-dictcase yes &quot;
+</I>&gt;<i> &gt;     &quot;-hmm &quot; POCKETSPHINX_PREFIX
+</I>&gt;<i> &gt; &quot;/share/pocketsphinx/model/hmm/voxforge-ta &quot;
+</I>&gt;<i> &gt;     &quot;-fsg &quot; GNOMEDATADIR &quot;/gnome-voice-control/desktop-control.fsg &quot;
+</I>&gt;<i> &gt;     &quot;-dict &quot; GNOMEDATADIR
+</I>&gt;<i> &gt; &quot;/gnome-voice-control/desktop-control-ta.dict &quot;);
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; When 'Start Control' i get segmentation fault. Error looks like coming
+</I>&gt;<i> &gt; when try to call ps_update_fsgset (sink-&gt;decoder) in
+</I>&gt;<i> &gt; gst_sphinx_sink_set_fsg procedure.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Where am i going wrong ?
+</I>&gt;<i>
+</I>&gt;<i> You are using outdated pocketsphinx, try newer version
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110102/cc2b500d/attachment.html">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20110102/cc2b500d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000066.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+	<LI>Next message: <A HREF="000068.html">[Festlang-gvc] GVC - Segmentation fault when configuring with own model
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

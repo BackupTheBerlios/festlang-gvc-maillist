@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] [PATCH] Add window mode to ease debugging
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20%5BPATCH%5D%20Add%20window%20mode%20to%20ease%20debugging&In-Reply-To=%3C1229656241.10308.3.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000045.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] [PATCH] Add window mode to ease debugging</H1>
+    <B>Nickolay V. Shmyrev</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20%5BPATCH%5D%20Add%20window%20mode%20to%20ease%20debugging&In-Reply-To=%3C1229656241.10308.3.camel%40localhost.localdomain%3E"
+       TITLE="[Festlang-gvc] [PATCH] Add window mode to ease debugging">nshmyrev at yandex.ru
+       </A><BR>
+    <I>Fri Dec 19 04:10:41 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000045.html">[Festlang-gvc] [PATCH] Add window mode to ease debugging
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&#1042; &#1055;&#1090;&#1085;, 19/12/2008 &#1074; 04:00 +0100, Alban Browaeys &#1087;&#1080;&#1096;&#1077;&#1090;:
+&gt;<i> This patch add a --window  switch to run the applet from the console 
+</I>&gt;<i> (the applet_factory around voice_control_applet_factory is not needed 
+</I>&gt;<i> .... just tell me if you want this added layer removed and I ll resubmit 
+</I>&gt;<i> a new patch).
+</I>
+Hey Alban, great work. Create yourself an account on berlios and I'll
+happily add you to the developers! You'll be able to commit your patch
+yourself.
+
+&gt;<i> I hope that with this ease of debugging I ll be able to send fixes for 
+</I>&gt;<i> the segfaults I encounter .
+</I>&gt;<i> One of those I have worked around by adding:
+</I>&gt;<i> 
+</I>&gt;<i>         if (GST_SPHINX_SINK(voice_control-&gt;sink)-&gt;ad.initialized ) {
+</I>&gt;<i> 
+</I>&gt;<i> around the code in voice-control.c :
+</I>&gt;<i> static void
+</I>&gt;<i> voice_control_ui_changed (ControlSpiListener *listener, gpointer data)
+</I>&gt;<i> 
+</I>&gt;<i> because on my setup ps_init is too slow and the decoder_init from 
+</I>&gt;<i> gstsphinxsink.c is not run before the ui is updated (or so I think it is 
+</I>&gt;<i> what s happening right now, feel free to correct me). This crash happens 
+</I>&gt;<i> in gst_sphinx_sink_set_fsg/gst_spinx_construct_fsg called from 
+</I>&gt;<i> voice_control_ui_changed because sink-&gt;decoder is null  for the first ui 
+</I>&gt;<i> change.
+</I>
+Nice catch! Actually we can create a callback and start UI lookup only
+when decoder is initialized.
+
+&gt;<i> Still I now get a crash again in ui_changed but this time while 
+</I>&gt;<i> ps_update_fsgs is called. I hope to be able to fix this one but it is 
+</I>&gt;<i> not as obvious as the one I fixed with the previous change.
+</I>&gt;<i> 
+</I>&gt;<i> I cannot wait for a version that understand french .-)
+</I>&gt;<i> 
+</I>
+Well, it's possible right now, you just need to translate it to french
+with fr.po and create a dictionary. Also you need to package existing
+acoustic model from sphinx downloads in a special way so it will be
+handled by the decoder.
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20081219/e2cde3e0/attachment.pgp">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20081219/e2cde3e0/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000045.html">[Festlang-gvc] [PATCH] Add window mode to ease debugging
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

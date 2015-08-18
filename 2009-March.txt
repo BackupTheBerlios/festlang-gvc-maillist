@@ -1,0 +1,62 @@
+From nshmyrev at yandex.ru  Mon Mar 30 01:50:20 2009
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Mon, 30 Mar 2009 03:50:20 +0400
+Subject: [Festlang-gvc] [PATCH] Add window mode to ease debugging
+In-Reply-To: <1229656241.10308.3.camel@localhost.localdomain>
+References: <494B0E6A.60901@yahoo.com>
+	<1229656241.10308.3.camel@localhost.localdomain>
+Message-ID: <1238370620.6079.35.camel@localhost.localdomain>
+
+? ???, 19/12/2008 ? 06:10 +0300, Nickolay V. Shmyrev ?????:
+> ? ???, 19/12/2008 ? 04:00 +0100, Alban Browaeys ?????:
+> > This patch add a --window  switch to run the applet from the console 
+> > (the applet_factory around voice_control_applet_factory is not needed 
+> > .... just tell me if you want this added layer removed and I ll resubmit 
+> > a new patch).
+> 
+> Hey Alban, great work. Create yourself an account on berlios and I'll
+> happily add you to the developers! You'll be able to commit your patch
+> yourself.
+> 
+> > I hope that with this ease of debugging I ll be able to send fixes for 
+> > the segfaults I encounter .
+> > One of those I have worked around by adding:
+> > 
+> >         if (GST_SPHINX_SINK(voice_control->sink)->ad.initialized ) {
+> > 
+> > around the code in voice-control.c :
+> > static void
+> > voice_control_ui_changed (ControlSpiListener *listener, gpointer data)
+> > 
+> > because on my setup ps_init is too slow and the decoder_init from 
+> > gstsphinxsink.c is not run before the ui is updated (or so I think it is 
+> > what s happening right now, feel free to correct me). This crash happens 
+> > in gst_sphinx_sink_set_fsg/gst_spinx_construct_fsg called from 
+> > voice_control_ui_changed because sink->decoder is null  for the first ui 
+> > change.
+> 
+> Nice catch! Actually we can create a callback and start UI lookup only
+> when decoder is initialized.
+> 
+> > Still I now get a crash again in ui_changed but this time while 
+> > ps_update_fsgs is called. I hope to be able to fix this one but it is 
+> > not as obvious as the one I fixed with the previous change.
+> > 
+> > I cannot wait for a version that understand french .-)
+> > 
+> 
+> Well, it's possible right now, you just need to translate it to french
+> with fr.po and create a dictionary. Also you need to package existing
+> acoustic model from sphinx downloads in a special way so it will be
+> handled by the decoder.
+
+Heh, finally applied the patch. Sorry for delays :)
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 197 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20090330/d15dac20/attachment.pgp>
+

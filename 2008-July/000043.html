@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] gstsphinxsink error during compiling
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20gstsphinxsink%20error%20during%20compiling&In-Reply-To=%3C48918491.10207%40sanniolug.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000042.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] gstsphinxsink error during compiling</H1>
+    <B>Ivan Morgillo</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20gstsphinxsink%20error%20during%20compiling&In-Reply-To=%3C48918491.10207%40sanniolug.org%3E"
+       TITLE="[Festlang-gvc] gstsphinxsink error during compiling">imorgillo at sanniolug.org
+       </A><BR>
+    <I>Thu Jul 31 11:23:29 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000042.html">[Festlang-gvc] spanish file licence info---
+</A></li>
+        <LI>Next message: <A HREF="000044.html">[Festlang-gvc] gstsphinxsink error during compiling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, I'm trying to compile gnome-voice-control-0.3.
+I got an error:
+
+In file included from gstsphinxsink.c:33:
+gstsphinxsink.h:32:17: error: fbs.h: No such file or directory
+gstsphinxsink.c:321: error: expected declaration specifiers or &#8216;...&#8217;
+before &#8216;s2_fsg_trans_t&#8217;
+gstsphinxsink.c: In function &#8216;gst_sphinx_construct_trans_list&#8217;:
+gstsphinxsink.c:325: error: &#8216;s2_fsg_trans_t&#8217; undeclared (first use in
+this function)
+gstsphinxsink.c:325: error: (Each undeclared identifier is reported only
+once
+gstsphinxsink.c:325: error: for each function it appears in.)
+gstsphinxsink.c:325: error: &#8216;transitions&#8217; undeclared (first use in this
+function)
+gstsphinxsink.c:337: error: expected expression before &#8216;)&#8217; token
+gstsphinxsink.c:360: error: &#8216;trans_list&#8217; undeclared (first use in this
+function)
+gstsphinxsink.c: In function &#8216;gst_sphinx_sink_set_fsg&#8217;:
+gstsphinxsink.c:371: error: &#8216;s2_fsg_t&#8217; undeclared (first use in this
+function)
+gstsphinxsink.c:371: error: expected &#8216;;&#8217; before &#8216;fsg&#8217;
+gstsphinxsink.c:372: error: &#8216;s2_fsg_trans_t&#8217; undeclared (first use in
+this function)
+gstsphinxsink.c:372: error: &#8216;trans_list&#8217; undeclared (first use in this
+function)
+gstsphinxsink.c:374: error: &#8216;fsg&#8217; undeclared (first use in this function)
+gstsphinxsink.c:375: error: too many arguments to function
+&#8216;gst_sphinx_construct_trans_list&#8217;
+make[2]: *** [gstsphinxsink.o] Error 1
+make[2]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/ivan/temp/gnome-voice-control-0.3'
+make: *** [all] Error 2
+
+I'm using Ubuntu Hardy. I tried .deb, but it's buggy. I installed all
+dependencies, libraries... Any help?
+Thanks,
+Ivan
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: imorgillo.vcf
+Type: text/x-vcard
+Size: 602 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.vcf">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.vcf</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: OpenPGP digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.pgp">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080731/5333fcd5/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000042.html">[Festlang-gvc] spanish file licence info---
+</A></li>
+	<LI>Next message: <A HREF="000044.html">[Festlang-gvc] gstsphinxsink error during compiling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

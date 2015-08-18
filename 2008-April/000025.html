@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Festlang-gvc] fsg files
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/festlang-gvc/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20fsg%20files&In-Reply-To=%3C1207595598.2093.5.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000024.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Festlang-gvc] fsg files</H1>
+    <B>Nickolay V. Shmyrev</B> 
+    <A HREF="mailto:festlang-gvc%40lists.berlios.de?Subject=Re%3A%20%5BFestlang-gvc%5D%20fsg%20files&In-Reply-To=%3C1207595598.2093.5.camel%40localhost.localdomain%3E"
+       TITLE="[Festlang-gvc] fsg files">nshmyrev at yandex.ru
+       </A><BR>
+    <I>Mon Apr  7 21:13:18 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000024.html">[Festlang-gvc] fsg files
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&#1042; &#1055;&#1085;&#1076;, 07/04/2008 &#1074; 18:28 +0200, Opax Amazigh &#1087;&#1080;&#1096;&#1077;&#1090;:
+&gt;<i> Hello!
+</I>&gt;<i> 
+</I>&gt;<i> I think GVC is a great project... which can find great applications.
+</I>&gt;<i> 
+</I>&gt;<i> so i'd like to understand it.
+</I>&gt;<i> 
+</I>&gt;<i> I have compiled GVC 0.2 and add new command but i realized that some
+</I>&gt;<i> words are not in the dictionnary. 
+</I>&gt;<i> So I added them but there this file
+</I>&gt;<i> 
+</I>&gt;<i> desktop-control.fsg
+</I>&gt;<i> 
+</I>&gt;<i> how does it work? it for the sentences?
+</I>&gt;<i> 
+</I>&gt;<i> could some help me to understand it please..
+</I>&gt;<i> 
+</I>&gt;<i> thanks!
+</I>
+Hi Opax, welcome to gvc.
+
+First of all please checkout/download the latest version -
+gnome-voice-control-0.3. It has some important modifications.
+
+Next, about fsg. As you see it describes the grammar recognizer
+understands. But this grammar is not actually contained in
+desktop-control.fsg. In latest version this file is just empty. The real
+grammar is built on the fly by gst_sphinx_sink_set_fsg function. Words
+from commands and UI elements are included there from ally introspection
+information.
+
+If you need to add another command, open the file action.c and add a
+command for existing action or even add a new action. Remember that the
+word you'd like to add must be in the dictionary as well.
+
+
+If you have more questions, feel free to ask or join #cmusphinx channel
+on freenode.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080407/401f105c/attachment.pgp">https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080407/401f105c/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000024.html">[Festlang-gvc] fsg files
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/festlang-gvc">More information about the Festlang-gvc
+mailing list</a><br>
+</body></html>

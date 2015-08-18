@@ -1,0 +1,53 @@
+From nshmyrev at yandex.ru  Mon Jun  2 14:25:01 2008
+From: nshmyrev at yandex.ru (Nickolay V. Shmyrev)
+Date: Mon, 02 Jun 2008 16:25:01 +0400
+Subject: [Festlang-gvc] gvc word recognition system
+In-Reply-To: <901a4c140805311254n33109835x9918ac44dd90b5fc@mail.gmail.com>
+References: <901a4c140805311254n33109835x9918ac44dd90b5fc@mail.gmail.com>
+Message-ID: <1212409501.13001.5.camel@t94>
+
+? ???, 31/05/2008 ? 21:54 +0200, Andr?s Est?vez Costas ?????:
+> Hi all,
+> 
+> I've been thinking on gvc word recognition system (well, in sphinx)
+> and I have a proposal:
+> 
+> What's about getting phonetic transcription of each word automatically
+> instead of reading it from a text file?
+> 
+> That is, when a window gets focus, we get its items by means of
+> accessibility description. So, maybe, we can get phonetic
+> transcription of each item if we would can find a way to translate it
+> into phonemes. Then, sphinx could compare with these phonemes (that
+> have been generated on the fly). The main goal of this method is the
+> flexibility: a big list with all possible words isn't necessary now,
+> and any accessible application could be use from gvc, regardless of
+> the words that it uses.
+> 
+> I don't know how difficult is this method in english, but, in Spanish,
+> for instance, there is a direct translation from letters  (or groups
+> of letters) to phonemes.
+> 
+> Moreover, this is a common feature in mobile phones, where you can say
+> the name of your contacts. I don't believe it store a big list with
+> all possible names...
+
+As I said in irc, this is really a very reasonable item in TODO list.
+LTS system included in recognizer could greatly reduce the memory
+footprint as well as can help with OOV words. Another point I'm working
+at now (not related to sphinx directly though) is n-best LTS. Instead of
+single pronunciation it will generate variants for recognizer to match.
+This way performance will be also improved. 
+
+The work for such system was partially implemented in sphinx3 for
+English with CART tree, but I afraid it will not fit in current
+pocketsphinx architecture. So more work is still required.
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 191 bytes
+Desc: ??? ????? ????????? ????????? ???????? ????????
+URL: <https://lists.berlios.de/pipermail/festlang-gvc/attachments/20080602/14af0b37/attachment.pgp>
+
